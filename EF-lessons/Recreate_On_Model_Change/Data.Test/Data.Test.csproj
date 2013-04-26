@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{399A9BC8-5E55-4A5D-8FA8-432C74FCEAA6}</ProjectGuid>
+    <ProjectGuid>{1B0EF9CA-E813-4FF6-9C4F-4F30FA12CC74}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Data.Test</RootNamespace>
@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\Application\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
@@ -53,12 +53,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="ChangeDatabaseName.cs" />
+    <Compile Include="BloggerContextTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj">
-      <Project>{989c372d-a3e9-4863-b80c-d44b51b7f43d}</Project>
+      <Project>{cd042cd7-c9d0-40e4-b945-84a6ac1412e4}</Project>
       <Name>Data</Name>
     </ProjectReference>
   </ItemGroup>
