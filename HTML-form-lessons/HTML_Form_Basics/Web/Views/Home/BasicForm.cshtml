@@ -1,0 +1,33 @@
+﻿@model Web.ViewModels.School
+
+@{
+    ViewBag.Title = "BasicForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Basic Form</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="message-error">@Html.Raw(ViewBag.Message)</div>
+}
+
+@using (Html.BeginForm("BasicForm", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Send some values</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(model => model.Name)
+                @Html.TextBoxFor(model => model.Name)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.PhoneNumer)
+                @Html.TextBoxFor(model => model.PhoneNumer)
+            </li>
+        </ol>
+    </fieldset>
+    
+    <button type="submit">Submit</button>
+}
+

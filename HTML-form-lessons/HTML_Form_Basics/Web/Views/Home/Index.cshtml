@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "Site Overview";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+            <p>
+                This site is a basic overview of a few common scenarios you will run into while using HTML forms with MVC 4.
+            </p>
+        </div>
+    </section>
+}
+<h3>Topics include the following:</h3>
+<ol class="round">
+    <li class="one">
+        <h5>None AJAX Forms</h5>
+        This is your most basic form using plain old server side postbacks.
+    </li>
+
+    <li class="two">
+        <h5>AJAX Enabled Forms</h5>
+        These are form elements that do partial postbacks. The cool thing is that MVC 4 has taken care of a lot of stuff
+        for us!
+    </li>
+
+    <li class="three">
+        <h5>Advanced view model integration with forms.</h5>
+        An example of this is a view model that has several lists of things that all need to get passed to the server when it is 
+        posted.
+    </li>
+</ol>
