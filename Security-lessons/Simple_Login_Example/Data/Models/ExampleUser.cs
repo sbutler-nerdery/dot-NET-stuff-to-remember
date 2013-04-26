@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Data.Model
+namespace Data.Models
 {
     /// <summary>
     /// On line 42 of InitializeSimpleMembershipAttribute, this is the table name specified for the custom user's table

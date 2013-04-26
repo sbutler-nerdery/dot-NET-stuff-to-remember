@@ -5,7 +5,6 @@ using System.Threading;
 using System.Web.Mvc;
 using Data;
 using WebMatrix.WebData;
-using Web.Models;
 
 namespace Web.Filters
 {
@@ -26,10 +25,16 @@ namespace Web.Filters
         {
             public SimpleMembershipInitializer()
             {
+                //NOTE: this is here when you create a new project in VS, but we don't need it because
+                //we are initializing the database in app_start in global.ashx
+
                 //Database.SetInitializer<ExampleContext>(null);
 
                 try
                 {
+                    //NOTE: this is here when you create a new project in VS, but we don't need it because
+                    //we are initializing the database in app_start in global.ashx
+
                     //using (var context = new ExampleContext())
                     //{
                     //    if (!context.Database.Exists())
@@ -39,6 +44,7 @@ namespace Web.Filters
                     //    }
                     //}
 
+                    //Tell WebSecurity what connection string and user table data to use...
                     WebSecurity.InitializeDatabaseConnection(ExampleContext.ConnectionString, 
                         ExampleContext.UserTableName, 
                         ExampleContext.UserIdProperty, 

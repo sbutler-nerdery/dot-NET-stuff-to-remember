@@ -19,9 +19,10 @@ namespace Web
     {
         protected void Application_Start()
         {
+            //Setting this initialization strategy will wipe the database when there are model changes!!
             Database.SetInitializer(new ExampleContextInitializer());
 
-            //Force the context to initialize on app start...
+            //Force the context to initialize on app start... remove on a real site!
             using (var context = new ExampleContext())
             {
                 context.Database.Initialize(true);    

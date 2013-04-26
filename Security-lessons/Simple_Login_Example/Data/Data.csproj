@@ -46,7 +46,7 @@
   <ItemGroup>
     <Compile Include="ExampleContext.cs" />
     <Compile Include="ExampleContextInitializer.cs" />
-    <Compile Include="Model\ExampleUser.cs" />
+    <Compile Include="Models\ExampleUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
