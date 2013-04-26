@@ -45,9 +45,9 @@ namespace Web.Controllers
         }
 
         [HttpPost]
-        public ActionResult AjaxForm(School model   )
+        public ActionResult AjaxForm(School model)
         {
-            return View();
+            return PartialView("_UpdateMePartial", model);
         }
     }
 }

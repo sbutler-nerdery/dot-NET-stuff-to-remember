@@ -5,4 +5,25 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>AjaxForm</h2>
+<h2>Ajax Form</h2>
+
+@using (Ajax.BeginForm("AjaxForm", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "updateMe" }))
+{
+    <fieldset>
+        <legend>Send some values</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(model => model.Name)
+                @Html.TextBoxFor(model => model.Name)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.PhoneNumer)
+                @Html.TextBoxFor(model => model.PhoneNumer)
+            </li>
+        </ol>
+    </fieldset>
+    
+    <button type="submit">Submit</button>
+}
+
+<div id="updateMe"></div>
