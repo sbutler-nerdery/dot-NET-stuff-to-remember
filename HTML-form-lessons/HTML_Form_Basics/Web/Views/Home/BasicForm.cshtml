@@ -16,14 +16,15 @@
 {
     <fieldset>
         <legend>Send some values</legend>
+        <p>This is a plain jane post back to the server.</p>
         <ol>
             <li>
                 @Html.LabelFor(model => model.Name)
                 @Html.TextBoxFor(model => model.Name)
             </li>
             <li>
-                @Html.LabelFor(model => model.PhoneNumer)
-                @Html.TextBoxFor(model => model.PhoneNumer)
+                @Html.LabelFor(model => model.PhoneNumber)
+                @Html.TextBoxFor(model => model.PhoneNumber)
             </li>
         </ol>
     </fieldset>

@@ -312,6 +312,7 @@
     <Content Include="Views\Home\BasicForm.cshtml" />
     <Content Include="Views\Home\AjaxForm.cshtml" />
     <Content Include="Views\Home\_UpdateMePartial.cshtml" />
+    <Content Include="Views\Home\ComplexForm.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

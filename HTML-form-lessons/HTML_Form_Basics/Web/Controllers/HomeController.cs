@@ -39,6 +39,18 @@ namespace Web.Controllers
             return View();
         }
 
+        public ActionResult ComplexForm()
+        {
+            Person model = new Person { SchoolsIWentTo = new List<School>() };
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult ComplexForm(Person model)
+        {
+            return View(model);
+        }
+
         public ActionResult AjaxForm()
         {
             return View();
