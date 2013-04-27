@@ -6,24 +6,112 @@
 }
 
 <h2>Ajax Form</h2>
+<div class="row">
+    <div class="column col2of4">
+        <h3>Partial page update</h3>
 
-@using (Ajax.BeginForm("AjaxForm", "Home", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "updateMe" }))
-{
-    <fieldset>
-        <legend>Send some values</legend>
-        <ol>
-            <li>
-                @Html.LabelFor(model => model.Name)
-                @Html.TextBoxFor(model => model.Name)
-            </li>
-            <li>
-                @Html.LabelFor(model => model.PhoneNumer)
-                @Html.TextBoxFor(model => model.PhoneNumer)
-            </li>
-        </ol>
-    </fieldset>
+        <script type="text/javascript">
+            function showLoader() {
+                $("#updateMe").html("<h3>Loading...</h3>");
+            }
+        </script>
+
+        @using (Ajax.BeginForm("AjaxForm", "Home", new AjaxOptions { HttpMethod = "POST", 
+            OnBegin = "showLoader",
+            UpdateTargetId = "updateMe" }))
+        {
+            <fieldset>
+                <legend>Send some values</legend>
+                <p>This form has the AjaxOptions.UpdateTargetId option pointing to the div layer #updateMe. Rhe 
+                    HomeController.AjaxForm method returns the rendered HTML results of the "_UpdateMePartial.cshtml" view, 
+                    which is inserted into the specified div layer.
+                </p>
+                <p><b>NOTE:</b> this uses jQuery live under the covers and may not work with newer versions of jQuery.</p>
+                <ol>
+                    <li>
+                        @Html.LabelFor(model => model.Name)
+                        @Html.TextBoxFor(model => model.Name)
+                    </li>
+                    <li>
+                        @Html.LabelFor(model => model.PhoneNumber)
+                        @Html.TextBoxFor(model => model.PhoneNumber)
+                    </li>
+                </ol>
+            </fieldset>
     
-    <button type="submit">Submit</button>
-}
+            <button type="submit">Submit</button>
+        }
+    </div>
+    <div class="column col2of4">
+        <div id="updateMe" class="scroll-box border-panel" style="height:230px;">
+            <h3>This panel will get updated by AJAX</h3>
+        </div>
+    </div>
+</div>
 
-<div id="updateMe"></div>
+<div class="row">
+    <div class="column col2of4">
+        <h3>Post to JsonResult</h3>
+        <script type="text/javascript">
+            function success(data) {
+                var template = $(".template");
+                $(template).find(".name").html(data.Name);
+                $(template).find(".phone").html(data.PhoneNumber);
+                var html = $(template).html();
+                $("#updateMe").html("<h3>JSON data from a JsonResult method</h3>" + html);
+            }
+        </script>
+        @using (Ajax.BeginForm("GetJson", "Home", new AjaxOptions
+        {
+            HttpMethod = "POST", 
+            OnSuccess="success" }))
+        {
+            <fieldset>
+                <legend>Send some values</legend>
+                <p>This form has the AjaxOptions.OnSuccess option calling the javascript method "success", which will 
+                    handle the results of the HomeController.GetJson method. The method returns a "data" parameter
+                    to the javascript with whatever properties you specify. Pretty handy.
+                </p>
+                <ol>
+                    <li>
+                        @Html.LabelFor(model => model.Name)
+                        @Html.TextBoxFor(model => model.Name)
+                    </li>
+                    <li>
+                        @Html.LabelFor(model => model.PhoneNumber)
+                        @Html.TextBoxFor(model => model.PhoneNumber)
+                    </li>
+                </ol>
+            </fieldset>
+    
+            <button type="submit">Submit</button>
+        }
+    </div>
+    <div class="column col2of4">
+        <h3>Exception Anyone?</h3>
+        <script type="text/javascript">
+            function error(data) {
+                jQuery("#updateMe").html("<h3>An error occured</h3>" + data.status + " - " + data.statusText);
+            }
+        </script>
+        @using (Ajax.BeginForm("ThrowError", "Home", new AjaxOptions
+        {
+            HttpMethod = "POST",
+            OnFailure = "error" }))
+        {
+            <fieldset>
+                <legend>Send some values</legend>
+                <p>The method being called by this form will throw an exception. The AjaxMethod.OnFailure option is pointing
+                    at the javascript method "error" which will be called when an ajax call encounters an unhandled exception.
+                    At that point, you can use the data parameter to do whatever you want in the javascript.
+                </p>
+            </fieldset>
+    
+            <button type="submit">Throw Exception</button>
+        }
+    </div>
+</div>
+<div class="template">
+    <div><span class="bold-label">School name: </span><span class="name"></span></div>
+    <div><span class="bold-label">Phone number: </span><span class="phone"></span></div>
+</div>

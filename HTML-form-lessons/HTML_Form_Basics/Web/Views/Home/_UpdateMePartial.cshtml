@@ -1,10 +1,10 @@
 ﻿@model Web.ViewModels.School
 
-<h2>This was updated with ajax</h2>
+<h3>This was updated using the AjaxOptions.UpdateTargetId</h3>
 
-<div>School name:</div>
+<div class="bold-label">School name:</div>
 <div>@Model.Name</div>
-<div>School number:</div>
-<div>@Model.PhoneNumer</div>
+<div class="bold-label">School number:</div>
+<div>@Model.PhoneNumber</div>
 
-<div><b>Update time:</b> @DateTime.Now.ToString()</div>
+<div><span class="bold-label">Update time:</span> @DateTime.Now.ToString()</div>

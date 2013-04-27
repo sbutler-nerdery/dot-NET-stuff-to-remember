@@ -31,7 +31,7 @@ namespace Web.Controllers
                 StringBuilder builder = new StringBuilder();
                 builder.AppendLine("You sumitted the following values:<br/>");
                 builder.AppendLine(string.Format(template, "Name", model.Name));
-                builder.AppendLine(string.Format(template, "Phone number", model.PhoneNumer));
+                builder.AppendLine(string.Format(template, "Phone number", model.PhoneNumber));
 
                 ViewBag.Message = builder.ToString();                
             }
@@ -48,6 +48,19 @@ namespace Web.Controllers
         public ActionResult AjaxForm(School model)
         {
             return PartialView("_UpdateMePartial", model);
+        }
+
+        [HttpPost]
+        public JsonResult GetJson(School model)
+        {
+            //This will return a JSON object of the model
+            return Json(model);
+        }
+
+        [HttpPost]
+        public JsonResult ThrowError(School model)
+        {
+            throw new Exception("The website crapped all over itself.");
         }
     }
 }
