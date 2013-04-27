@@ -28,7 +28,7 @@
 
         $(".add-school").click(function () {
             //Clone the template
-            var clone = $(this).prev(".template").clone();
+            var clone = $(this).next(".template").clone();
 
             //Update the labels and input ids
             var nameLabel = $(clone).find("[data-school-label=@NAME]").first();
@@ -55,10 +55,16 @@
             $(phoneInput).removeAttr("data-school-field");
 
             //Remove the class from the template
-            $(clone).removeClass("template");
+            $(clone).attr("class","school-item");
 
             //Add the cloned template to the list
             $(clone).insertBefore(this);
+
+            //Hook up the remove event handler
+            $(clone).find(".remove-school").first().click(function () {
+                $(this).closest(".school-item").remove();
+                schoolCount--;
+            });
 
             //Increment the total count of schools...
             schoolCount++;
@@ -91,7 +97,7 @@
                     var schoolNameId = string.Format(formIdTemplate, school.Name, i);
                     var schoolNumberId = string.Format(formIdTemplate, school.PhoneNumber, i);
                     
-                    <ol>
+                    <ol class="school-item">
                         <li>
                             <label for="@schoolNameId">School name:</label>
                             <input type="text" id="@schoolNameId" name="@string.Format(formNameTemplate, i, NAME)" value="@school.Name" />
@@ -100,10 +106,11 @@
                             <label for="@schoolNumberId">School phone number:</label>
                             <input type="text" id="@schoolNumberId" name="@string.Format(formNameTemplate, i, PHONE_NUMBER)" value="@school.PhoneNumber" />
                         </li>
-                        <li><a href="javascript;" class="remove-school">Remove</a></li>
+                        <li><a href="javascript:;" class="remove-school">Remove</a></li>
                         <li><hr /></li>
                     </ol>
                 }   
+                <button type="button" class="add-school">Add school</button>
                 <ol class="template">
                     <li>
                         <label for="@templateSchoolNameId" data-school-label="@NAME">School name:</label>
@@ -113,10 +120,9 @@
                         <label for="@templatePhoneId" data-school-label="@PHONE_NUMBER">School phone number:</label>
                         <input type="text" id="@templatePhoneId" name="@templatePhoneFormName" data-school-field="@PHONE_NUMBER" />
                     </li>
-                    <li><a href="javascript;" class="remove-school">Remove</a></li>
+                    <li><a href="javascript:;" class="remove-school">Remove</a></li>
                     <li><hr /></li>
                 </ol>
-                <button type="button" class="add-school">Add school</button>
             </li>
         </ol>
     </fieldset>
