@@ -48,6 +48,10 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult ComplexForm(Person model)
         {
+            if (model.SchoolsIWentTo == null)
+            {
+                model.SchoolsIWentTo = new List<School>();
+            }
             return View(model);
         }
 

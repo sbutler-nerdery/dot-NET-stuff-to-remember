@@ -9,8 +9,8 @@
     const string PHONE_NUMBER = "PhoneNumber";
     
     //Variables 
-    var formIdTemplate = "Person_School_{0}_{1}";
-    var formNameTemplate = "Person.School.{0}.{1}";
+    var formIdTemplate = "SchoolsIWentTo_{0}_{1}";
+    var formNameTemplate = "SchoolsIWentTo[{0}].{1}";
     var templateSchoolNameId = string.Format(formIdTemplate, 0, NAME);
     var templateSchoolNameFormName = string.Format(formNameTemplate, 0, NAME);
     var templatePhoneId = string.Format(formIdTemplate, 0, PHONE_NUMBER);
@@ -28,7 +28,7 @@
 
         $(".add-school").click(function () {
             //Clone the template
-            var clone = $(this).next(".template").clone();
+            var clone = $(".template").first().clone();
 
             //Update the labels and input ids
             var nameLabel = $(clone).find("[data-school-label=@NAME]").first();
@@ -58,7 +58,7 @@
             $(clone).attr("class","school-item");
 
             //Add the cloned template to the list
-            $(clone).insertBefore(this);
+            $(clone).insertAfter(this);
 
             //Hook up the remove event handler
             $(clone).find(".remove-school").first().click(function () {
@@ -73,13 +73,13 @@
 </script>
 }
 <h2>Completx Form</h2>
-@using (Html.BeginForm("BasicForm", "Home", FormMethod.Post))
+@using (Html.BeginForm("ComplexForm", "Home", FormMethod.Post))
 {
     <fieldset>
         <legend>Send some values</legend>
         <p>This is a form that returns a view model with a list of items in addition to the 
             simple properties.</p>
-        <ol>
+        <ol class="column col2of4">
             <li>
                 @Html.LabelFor(model => model.FirstName)
                 @Html.TextBoxFor(model => model.FirstName)
@@ -88,9 +88,13 @@
                 @Html.LabelFor(model => model.Email)
                 @Html.TextBoxFor(model => model.Email)
             </li>
+            <li><button type="submit">Submit</button></li>
+        </ol>
+        <ol class="column col2of4">
             <li>
-                @Html.Label("Schools I went to")
+                <h2>Schools I went to</h2>
                 
+                <button type="button" class="add-school">Add school</button>
                 @for (int i = 0; i < Model.SchoolsIWentTo.Count; i++)
                 {
                     var school = Model.SchoolsIWentTo[i];
@@ -110,7 +114,6 @@
                         <li><hr /></li>
                     </ol>
                 }   
-                <button type="button" class="add-school">Add school</button>
                 <ol class="template">
                     <li>
                         <label for="@templateSchoolNameId" data-school-label="@NAME">School name:</label>
@@ -127,5 +130,5 @@
         </ol>
     </fieldset>
     
-    <button type="submit">Submit</button>
+ 
 }
