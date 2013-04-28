@@ -1,0 +1,17 @@
+﻿@model Web.ViewModels.School
+@{
+    var schoolClass = (Model.IsTemplate) ? "template" : "school-item";
+    }
+<ol class="@schoolClass" data-school-item-index="0">
+    <li>
+        @Html.LabelFor(model => model.Name, new { @data_school_label = "Name" })
+        @Html.TextBoxFor(model => model.Name, new { @data_school_field = "Name" })            
+    </li>
+    <li>
+        @Html.LabelFor(model => model.PhoneNumber, new { @data_school_label = "PhoneNumber" })
+        @Html.TextBoxFor(model => model.PhoneNumber, new { @data_school_field = "PhoneNumber" })
+        @Html.HiddenFor(model => model.IsTemplate)
+    </li>
+    <li><a href="javascript:;" class="remove-school">Remove</a></li>
+    <li><hr /></li>
+</ol>

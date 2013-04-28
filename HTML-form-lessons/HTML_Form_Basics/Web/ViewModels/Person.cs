@@ -8,6 +8,11 @@ namespace Web.ViewModels
 {
     public class Person
     {
+        public Person()
+        {
+            SchoolsIWentTo = new List<School>();
+        }
+
         [Required]
         [Display(Name = "First name")]
         public string FirstName { get; set; }
@@ -15,5 +20,6 @@ namespace Web.ViewModels
         [EmailAddress]
         public string Email { get; set; }
         public List<School> SchoolsIWentTo { get; set; }
+        public School Template { get; set; }
     }
 }

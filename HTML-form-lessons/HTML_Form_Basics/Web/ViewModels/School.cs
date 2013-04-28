@@ -8,12 +8,13 @@ namespace Web.ViewModels
 {
     public class School
     {
+        public int Index { get; set; }
         [Required]
         [Display(Name= "School name")]
         public string Name { get; set; }
         [Required]
         [Display(Name = "Phone number")]
-        [Phone]
         public string PhoneNumber { get; set; }
+        public bool IsTemplate { get; set; }
     }
 }

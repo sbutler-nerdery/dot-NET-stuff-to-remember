@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,7 +42,13 @@ namespace Web.Controllers
 
         public ActionResult ComplexForm()
         {
-            Person model = new Person { SchoolsIWentTo = new List<School>() };
+            Person model = new Person
+            {
+                Template = new School { IsTemplate = true },
+                SchoolsIWentTo = new List<School> { 
+                new School {Name = "ECA", PhoneNumber = "719.562.7894"}
+            }
+            };
             return View(model);
         }
 
@@ -52,6 +59,7 @@ namespace Web.Controllers
             {
                 model.SchoolsIWentTo = new List<School>();
             }
+
             return View(model);
         }
 

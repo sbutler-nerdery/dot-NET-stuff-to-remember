@@ -9,7 +9,7 @@
     const string PHONE_NUMBER = "PhoneNumber";
     
     //Variables 
-    var formIdTemplate = "SchoolsIWentTo_{0}_{1}";
+    var formIdTemplate = "SchoolsIWentTo_{0}__{1}";
     var formNameTemplate = "SchoolsIWentTo[{0}].{1}";
     var templateSchoolNameId = string.Format(formIdTemplate, 0, NAME);
     var templateSchoolNameFormName = string.Format(formNameTemplate, 0, NAME);
@@ -19,50 +19,43 @@
 }
 @section scripts{
 <script type="text/javascript">
-    $(document).ready(function () {
-        var templateSchoolNameId = "@templateSchoolNameId";
-        var templateSchoolNameFormName = "@templateSchoolNameFormName";
-        var templatePhoneId = "@templatePhoneId";
-        var templatePhoneFormName = "@templatePhoneFormName";
-        var schoolCount = "@schoolCount";
+    var templateSchoolNameId = "@templateSchoolNameId";
+    var templateSchoolNameFormName = "@templateSchoolNameFormName";
+    var templatePhoneId = "@templatePhoneId";
+    var templatePhoneFormName = "@templatePhoneFormName";
+    var schoolCount = "@schoolCount";
 
+    $(document).ready(function () {
         $(".add-school").click(function () {
             //Clone the template
             var clone = $(".template").first().clone();
 
             //Update the labels and input ids
-            var nameLabel = $(clone).find("[data-school-label=@NAME]").first();
-            var phoneLabel = $(clone).find("[data-school-label=@PHONE_NUMBER]").first();
-            var nameInput = $(clone).find("[data-school-field=@NAME]").first();
-            var phoneInput = $(clone).find("[data-school-field=@PHONE_NUMBER]").first();
-
-            var updatedNameId = templateSchoolNameId.replace("0", schoolCount);
-            var updatedPhoneId = templatePhoneId.replace("0", schoolCount);
-            var updatedNameAttr = templateSchoolNameFormName.replace("0", schoolCount);
-            var updatedPhoneAttr = templatePhoneFormName.replace("0", schoolCount);
-
-            $(nameLabel).attr("for", updatedNameId);
-            $(phoneLabel).attr("for", updatedPhoneId);
-            $(nameInput).attr("id", updatedNameId);
-            $(phoneInput).attr("id", updatedPhoneId);
-            $(nameInput).attr("name", updatedNameAttr);
-            $(phoneInput).attr("name", updatedPhoneAttr);
-
-            //Remove the data attributes from the cloned template
-            $(nameLabel).removeAttr("data-school-label");
-            $(phoneLabel).removeAttr("data-school-label");
-            $(nameInput).removeAttr("data-school-field");
-            $(phoneInput).removeAttr("data-school-field");
+            updateFormItems(clone, schoolCount);
 
             //Remove the class from the template
-            $(clone).attr("class","school-item");
+            $(clone).attr("class", "school-item");
 
             //Add the cloned template to the list
             $(clone).insertAfter(this);
 
             //Hook up the remove event handler
             $(clone).find(".remove-school").first().click(function () {
-                $(this).closest(".school-item").remove();
+                var school = $(this).closest(".school-item");
+
+                //Decerment the index of all of the items with a higher index than this item
+                var index = $(school).attr("data-school-item-index");
+                var decrimentThese = $("[data-school-item-index]").filter(function () {
+                    return $(this).attr("data-school-item-index") > index;
+                });
+
+                $(decrimentThese).each(function () {
+                    updateFormItems(this, index);
+                    index++;
+                });
+
+                //Remove school item
+                school.remove();
                 schoolCount--;
             });
 
@@ -70,6 +63,31 @@
             schoolCount++;
         });
     });
+
+    function updateFormItems(schoolItem, index) {
+        var nameLabel = $(schoolItem).find("[data-school-label=@NAME]").first();
+        var phoneLabel = $(schoolItem).find("[data-school-label=@PHONE_NUMBER]").first();
+        var nameInput = $(schoolItem).find("[data-school-field=@NAME]").first();
+        var phoneInput = $(schoolItem).find("[data-school-field=@PHONE_NUMBER]").first();
+
+        var updatedNameId = templateSchoolNameId.replace("0", index);
+        var updatedPhoneId = templatePhoneId.replace("0", index);
+        var updatedNameAttr = templateSchoolNameFormName.replace("0", index);
+        var updatedPhoneAttr = templatePhoneFormName.replace("0", index);
+
+        $(nameLabel).attr("for", updatedNameId);
+        $(phoneLabel).attr("for", updatedPhoneId);
+        $(nameInput).attr("id", updatedNameId);
+        $(phoneInput).attr("id", updatedPhoneId);
+        $(nameInput).attr("name", updatedNameAttr);
+        $(phoneInput).attr("name", updatedPhoneAttr);
+
+        //Add the index for the new item
+        $(schoolItem).attr("data-school-item-index", index);
+
+        //Return a JSON object with all of the fields for easy access...
+        return {"nameLabel":nameLabel, "phoneLabel":phoneLabel, "nameInput":nameInput, "phoneInput":phoneInput};
+    }
 </script>
 }
 <h2>Completx Form</h2>
@@ -93,41 +111,11 @@
         <ol class="column col2of4">
             <li>
                 <h2>Schools I went to</h2>
-                
-                <button type="button" class="add-school">Add school</button>
-                @for (int i = 0; i < Model.SchoolsIWentTo.Count; i++)
-                {
-                    var school = Model.SchoolsIWentTo[i];
-                    var schoolNameId = string.Format(formIdTemplate, school.Name, i);
-                    var schoolNumberId = string.Format(formIdTemplate, school.PhoneNumber, i);
-                    
-                    <ol class="school-item">
-                        <li>
-                            <label for="@schoolNameId">School name:</label>
-                            <input type="text" id="@schoolNameId" name="@string.Format(formNameTemplate, i, NAME)" value="@school.Name" />
-                        </li>
-                        <li>
-                            <label for="@schoolNumberId">School phone number:</label>
-                            <input type="text" id="@schoolNumberId" name="@string.Format(formNameTemplate, i, PHONE_NUMBER)" value="@school.PhoneNumber" />
-                        </li>
-                        <li><a href="javascript:;" class="remove-school">Remove</a></li>
-                        <li><hr /></li>
-                    </ol>
-                }   
-                <ol class="template">
-                    <li>
-                        <label for="@templateSchoolNameId" data-school-label="@NAME">School name:</label>
-                        <input type="text" id="@templateSchoolNameId" name="@templateSchoolNameFormName" data-school-field="@NAME" />
-                    </li>
-                    <li>
-                        <label for="@templatePhoneId" data-school-label="@PHONE_NUMBER">School phone number:</label>
-                        <input type="text" id="@templatePhoneId" name="@templatePhoneFormName" data-school-field="@PHONE_NUMBER" />
-                    </li>
-                    <li><a href="javascript:;" class="remove-school">Remove</a></li>
-                    <li><hr /></li>
-                </ol>
+                <button type="button" class="add-school">Add School</button>
+                @Html.EditorFor(model => model.SchoolsIWentTo)
+                @Html.EditorFor(model => model.Template)
             </li>
-        </ol>
+        </ol>        
     </fieldset>
     
  
