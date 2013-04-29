@@ -42,24 +42,23 @@ namespace Web.Controllers
 
         public ActionResult ComplexForm()
         {
+            //NOTE: this would normally be a call to the database.
             Person model = new Person
             {
-                Template = new School { IsTemplate = true },
+                FirstName = "Joe",
+                Email = "joe@hotmail.com",
+                Template = new School{ IsTemplate = true },
                 SchoolsIWentTo = new List<School> { 
-                new School {Name = "ECA", PhoneNumber = "719.562.7894"}
-            }
+                    new School {Name = "Some college", PhoneNumber = "123.123.1234", IsTemplate = false}
+                }
             };
+
             return View(model);
         }
 
         [HttpPost]
         public ActionResult ComplexForm(Person model)
         {
-            if (model.SchoolsIWentTo == null)
-            {
-                model.SchoolsIWentTo = new List<School>();
-            }
-
             return View(model);
         }
 

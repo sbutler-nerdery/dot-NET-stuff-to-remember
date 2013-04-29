@@ -4,91 +4,116 @@
     ViewBag.Title = "CompletxForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
     
-    //constants used in the templates
+    //The property names of the view model
     const string NAME = "Name";
     const string PHONE_NUMBER = "PhoneNumber";
-    
-    //Variables 
-    var formIdTemplate = "SchoolsIWentTo_{0}__{1}";
-    var formNameTemplate = "SchoolsIWentTo[{0}].{1}";
-    var templateSchoolNameId = string.Format(formIdTemplate, 0, NAME);
-    var templateSchoolNameFormName = string.Format(formNameTemplate, 0, NAME);
-    var templatePhoneId = string.Format(formIdTemplate, 0, PHONE_NUMBER);
-    var templatePhoneFormName = string.Format(formNameTemplate, 0, PHONE_NUMBER);
+    const string IS_TEMPLATE = "IsTemplate";
+    const string INDEX = "Index";
+
     var schoolCount = Model.SchoolsIWentTo.Count;   
 }
 @section scripts{
-<script type="text/javascript">
-    var templateSchoolNameId = "@templateSchoolNameId";
-    var templateSchoolNameFormName = "@templateSchoolNameFormName";
-    var templatePhoneId = "@templatePhoneId";
-    var templatePhoneFormName = "@templatePhoneFormName";
-    var schoolCount = "@schoolCount";
+    <script type="text/javascript">
+        var formIdTemplate = "SchoolsIWentTo_{0}__{1}";
+        var formNameTemplate = "SchoolsIWentTo[{0}].{1}";
+        var schoolFields = ["@NAME", "@PHONE_NUMBER", "@IS_TEMPLATE", "@INDEX"];
+        var schoolCount = "@schoolCount";
 
-    $(document).ready(function () {
-        $(".add-school").click(function () {
-            //Clone the template
-            var clone = $(".template").first().clone();
+        $(document).ready(function() {
 
-            //Update the labels and input ids
-            updateFormItems(clone, schoolCount);
-
-            //Remove the class from the template
-            $(clone).attr("class", "school-item");
-
-            //Add the cloned template to the list
-            $(clone).insertAfter(this);
-
-            //Hook up the remove event handler
-            $(clone).find(".remove-school").first().click(function () {
-                var school = $(this).closest(".school-item");
-
-                //Decerment the index of all of the items with a higher index than this item
-                var index = $(school).attr("data-school-item-index");
-                var decrimentThese = $("[data-school-item-index]").filter(function () {
-                    return $(this).attr("data-school-item-index") > index;
-                });
-
-                $(decrimentThese).each(function () {
-                    updateFormItems(this, index);
-                    index++;
-                });
-
-                //Remove school item
-                school.remove();
-                schoolCount--;
+            //Wireup the existing links for removing school items...
+            $(".remove-school").click(function() {
+                wireupDeleteHander(this);
             });
 
-            //Increment the total count of schools...
-            schoolCount++;
+            $(".add-school").click(function() {
+                //Clone the template
+                var lastSchoolItem = $(".school-item").last();
+                var clone = $(".template").first().clone();
+
+                //Update the labels and input ids
+                updateSchoolFormItems(clone, schoolCount);
+
+                //Remove the class from the template
+                $(clone).attr("class", "school-item");
+
+                //Add the cloned template to the list
+                $(clone).insertAfter(lastSchoolItem);
+
+                //Hook up the remove event handler
+                $(clone).find(".remove-school").first().click(function() {
+                    wireupDeleteHander(this);
+                });
+
+                //Make sure to re-parse the form's validation... or you will see STRANGE things happen.
+                var form = $("form")
+                            .removeData("validator") /* added by the raw jquery.validate plugin */
+                            .removeData("unobtrusiveValidation");  /* added by the jquery unobtrusive plugin */
+
+                $.validator.unobtrusive.parse(form);
+
+                //Increment the total count of schools...
+                schoolCount++;
+            });
         });
-    });
 
-    function updateFormItems(schoolItem, index) {
-        var nameLabel = $(schoolItem).find("[data-school-label=@NAME]").first();
-        var phoneLabel = $(schoolItem).find("[data-school-label=@PHONE_NUMBER]").first();
-        var nameInput = $(schoolItem).find("[data-school-field=@NAME]").first();
-        var phoneInput = $(schoolItem).find("[data-school-field=@PHONE_NUMBER]").first();
+        /**
+        * Set up the actions to be performed when a delete link is clicked.
+        * @@param deleteLink - the html element that will perform the delete action
+        */
 
-        var updatedNameId = templateSchoolNameId.replace("0", index);
-        var updatedPhoneId = templatePhoneId.replace("0", index);
-        var updatedNameAttr = templateSchoolNameFormName.replace("0", index);
-        var updatedPhoneAttr = templatePhoneFormName.replace("0", index);
+        function wireupDeleteHander(deleteLink) {
+            var school = $(deleteLink).closest(".school-item");
 
-        $(nameLabel).attr("for", updatedNameId);
-        $(phoneLabel).attr("for", updatedPhoneId);
-        $(nameInput).attr("id", updatedNameId);
-        $(phoneInput).attr("id", updatedPhoneId);
-        $(nameInput).attr("name", updatedNameAttr);
-        $(phoneInput).attr("name", updatedPhoneAttr);
+            //Decerment the index of all of the items with a higher index than this item
+            var index = $(school).attr("data-school-item-index");
+            var decrimentThese = $("[data-school-item-index]").filter(function() {
+                return $(this).attr("data-school-item-index") > index;
+            });
 
-        //Add the index for the new item
-        $(schoolItem).attr("data-school-item-index", index);
+            $(decrimentThese).each(function() {
+                updateSchoolFormItems(this, index);
+                index++;
+            });
 
-        //Return a JSON object with all of the fields for easy access...
-        return {"nameLabel":nameLabel, "phoneLabel":phoneLabel, "nameInput":nameInput, "phoneInput":phoneInput};
-    }
-</script>
+            //Remove school item
+            school.remove();
+            schoolCount--;
+        }
+
+        //Update the form fields for a particular school item...
+
+        function updateSchoolFormItems(schoolItem, index) {
+            
+            //Update all inputs and labels
+            for (var i = 0; i < schoolFields.length; i++) {
+                var field = schoolFields[i];
+                var label = $(schoolItem).find("[data-school-label=" + schoolFields[i] + "]").first();
+                var input = $(schoolItem).find("[data-school-field=" + schoolFields[i] + "]").first();
+
+                var id = formIdTemplate.replace("{0}", index).replace("{1}", field);
+                var formName = formNameTemplate.replace("{0}", index).replace("{1}", field);
+                
+                $(label).attr("for", id);
+                $(input).attr("id", id);
+                $(input).attr("name", formName);
+                    
+                //if this is the "IsTemplate" field then set the value to false
+                //... could do this with a data- attribute as well
+                if (field == schoolFields[2]) {
+                    $(input).val(false);
+                }
+
+                //If this is the school index, set the hidden fields appropriately
+                if (field == schoolFields[3]) {
+                    $(input).val(index);
+                }
+            }
+
+            //Add the index for the new item
+            $(schoolItem).attr("data-school-item-index", index);
+        }
+    </script>
 }
 <h2>Completx Form</h2>
 @using (Html.BeginForm("ComplexForm", "Home", FormMethod.Post))
@@ -113,10 +138,9 @@
                 <h2>Schools I went to</h2>
                 <button type="button" class="add-school">Add School</button>
                 @Html.EditorFor(model => model.SchoolsIWentTo)
-                @Html.EditorFor(model => model.Template)
             </li>
         </ol>        
     </fieldset>
     
- 
+    @Html.EditorFor(model => model.Template)
 }
