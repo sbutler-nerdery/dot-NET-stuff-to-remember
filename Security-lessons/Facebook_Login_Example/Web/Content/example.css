@@ -1,0 +1,50 @@
+﻿/* Layout */
+.row {
+    clear:both;
+}
+
+.scroll-box {
+    overflow:auto;
+}
+
+.column {
+    float:left;
+}
+
+.col1of4 {
+    width:25%;
+}
+
+.col2of4 {
+    width:50%;
+}
+
+.col3of4 {
+    width:75%;
+}
+
+.col4of4 {
+    width:100%;
+}
+
+/* Colors, borders and such */
+.border-panel {
+    border:5px dashed green;
+    padding:0px 10px;
+}
+
+.bold-label {
+    font-weight:bold;
+}
+
+.template {
+    display:none;
+}
+
+.column h3 {
+    color:green;
+}
+
+.column p {
+    padding-right:10px;
+}

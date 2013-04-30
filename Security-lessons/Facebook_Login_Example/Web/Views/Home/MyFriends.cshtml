@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Web.Models.FacebookUser>
+@{
+    ViewBag.Title = "MyFriends";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>MyFriends</h2>
+
+
+@foreach (var friend in Model)
+{
+    <div>
+        <div class="column col1of4">
+            <div class="loading">Loading....</div>
+        </div>
+        <div class="column  col3of4">
+            <div class="user-name">@friend.Name</div>
+            <div class="user-gender">@friend.Gender</div>
+        </div>    
+    </div>
+}
