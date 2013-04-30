@@ -3,7 +3,19 @@
     ViewBag.Title = "MyFriends";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
+@section scripts
+{
+    <script type="text/javascript">
+        function loadFacebookPic(facebookId) {
+            $.ajax({
+                url: "@Url.Action("GetUserPic", "Home")",
+                action: "POST",
+                data: { facebookId: facebookId },
+                type:"json"
+            });
+        }
+    </script>
+}
 <h2>MyFriends</h2>
 
 
@@ -11,11 +23,11 @@
 {
     <div>
         <div class="column col1of4">
-            <div class="loading">Loading....</div>
+            <div class="picture">Loading....</div>
         </div>
         <div class="column  col3of4">
+            <input type="hidden" value="@friend.Id"/>
             <div class="user-name">@friend.Name</div>
-            <div class="user-gender">@friend.Gender</div>
         </div>    
     </div>
 }
