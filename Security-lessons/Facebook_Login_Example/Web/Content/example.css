@@ -26,6 +26,12 @@
 .col4of4 {
     width:100%;
 }
+.user-name {
+
+}
+.inner {
+    margin: 5px auto;
+}
 
 /* Colors, borders and such */
 .border-panel {

@@ -28,37 +28,22 @@ namespace Web.Controllers
             return View();
         }
 
-        public Task<ActionResult> MyFriends()
+        public ActionResult MyFriends()
         {
             //Get a list of friends for the currently logged in user
-            var getFriendsUrl = string.Format("{0}/me/friends?access_token={1}", FACEBOOK_GRAPH_URL,
-                                              AccountController.AccessToken);
+            var getFriendsUrl = 
+                string.Format(
+                    "{0}fql?q={{\"friendsIds\":\"SELECT+uid2+FROM+friend+WHERE+uid1=me()\",\"friends\":\"SELECT+id,+name,+url,+pic,+pic_big+FROM+profile+WHERE+id+IN+(SELECT+uid2+FROM+%23friendsIds)\"}}&access_token={1}",
+                    FACEBOOK_GRAPH_URL, AccountController.AccessToken);
+            
             var json = HttpHelper.GetJson(getFriendsUrl);
             var myFriends = JObject.Parse(json);
-            var friendIds = (from friend in myFriends["data"]
-                            select (string)friend["id"]).Take(20).ToList();
+            var friends = (from friend in myFriends["data"][1]["fql_result_set"]
+                             select friend).ToList();
 
-            var friendsList = JsonConvert.DeserializeObject<List<FacebookUser>>(json);
+            var friendsList = JsonConvert.DeserializeObject<List<FacebookUser>>(JsonConvert.SerializeObject(friends));
 
-            //Get the pic for each user from facebook because they are retarded and don't include a link to that in the user information!
-
-            return View(friendsList);
-        }
-
-        public static List<FacebookUser> GetFacebookFriends(List<string> friendIds)
-        {
-            var friendsList = new List<FacebookUser>();
-
-            friendIds.ForEach(f =>
-            {
-                var getFriendDetailsUrl = string.Format("{0}{1}?access_token={2}", FACEBOOK_GRAPH_URL, f,
-                                                       AccountController.AccessToken);
-                var friendDetailJson = HttpHelper.GetJson(getFriendDetailsUrl);
-                var addMe = JsonConvert.DeserializeObject<FacebookUser>(friendDetailJson);
-                friendsList.Add(addMe);
-            });
-
-            return friendsList;
+            return View(friendsList.OrderBy(x => x.Name));
         }
     }
 }

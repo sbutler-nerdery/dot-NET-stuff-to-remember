@@ -3,31 +3,18 @@
     ViewBag.Title = "MyFriends";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@section scripts
-{
-    <script type="text/javascript">
-        function loadFacebookPic(facebookId) {
-            $.ajax({
-                url: "@Url.Action("GetUserPic", "Home")",
-                action: "POST",
-                data: { facebookId: facebookId },
-                type:"json"
-            });
-        }
-    </script>
-}
+
 <h2>MyFriends</h2>
 
 
 @foreach (var friend in Model)
 {
-    <div>
-        <div class="column col1of4">
-            <div class="picture">Loading....</div>
+    <div class="row">
+        <div class="column">
+            <div class="picture-@friend.Id"><img src="@friend.SmallPhotoUrl" alt="@friend.Name"/></div>
         </div>
-        <div class="column  col3of4">
-            <input type="hidden" value="@friend.Id"/>
-            <div class="user-name">@friend.Name</div>
+        <div class="column">
+            <div class="user-name"><div class="inner"><a href="@friend.Link" target="_blank">@friend.Name</a></div></div>
         </div>    
     </div>
 }

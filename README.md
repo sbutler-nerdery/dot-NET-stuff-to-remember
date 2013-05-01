@@ -9,4 +9,5 @@ This is a collection of projects that will help refresh my memory for all things
   - How to use knockout with MVC 4 (a super simple example).
   - How to login to Facebook using the out of the box OAuth provided by .NET MVC.
   - How does the bundling work in ASP.NET
-  - How to unit test EF backed business objects.
+  - How to unit test EF backed business objects with FakeItEasy.
+  - How to use a sitemap

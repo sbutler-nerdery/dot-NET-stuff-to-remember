@@ -9,22 +9,16 @@ namespace Web.Models
     public class FacebookUser
     {
         [JsonProperty("id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
         [JsonProperty("name")]
         public string Name { get; set; }
-        [JsonProperty("first_name")]
-        public string FirstName { get; set; }
-        [JsonProperty("last_name")]
-        public string LastName { get; set; }
-        [JsonProperty("link")]
+        [JsonProperty("url")]
         public string Link { get; set; }
         [JsonProperty("username")]
         public string UserName { get; set; }
-        [JsonProperty("gender")]
-        public string Gender { get; set; }
-        [JsonProperty("locale")]
-        public string Locale { get; set; }
+        [JsonProperty("pic")]
         public string SmallPhotoUrl { get; set; }
+        [JsonProperty("pic_square")]
         public string LargePhotoUrl { get; set; }
     }
 }
