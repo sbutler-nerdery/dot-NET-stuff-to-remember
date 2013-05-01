@@ -1,0 +1,16 @@
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\Common.Test.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\Common.Test.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\obj\Debug\Common.Test.csprojResolveAssemblyReference.cache
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\obj\Debug\Common.Test.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\obj\Debug\Common.Test.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\Common.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\FakeItEasy.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\EntityFramework.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\Common.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\FakeItEasy.xml
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\EntityFramework.xml
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\Data.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\Ninject.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\Data.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\Ninject.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common.Test\bin\Debug\Ninject.xml

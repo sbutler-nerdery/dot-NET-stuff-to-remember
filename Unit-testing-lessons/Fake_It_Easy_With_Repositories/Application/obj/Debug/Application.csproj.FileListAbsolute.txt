@@ -1,0 +1,15 @@
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\Application.exe.config
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\Application.exe
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\Application.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\Common.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\Data.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\EntityFramework.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\Ninject.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\Common.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\Data.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\EntityFramework.xml
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\Ninject.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\bin\Debug\Ninject.xml
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\obj\Debug\Application.csprojResolveAssemblyReference.cache
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\obj\Debug\Application.exe
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Application\obj\Debug\Application.pdb
