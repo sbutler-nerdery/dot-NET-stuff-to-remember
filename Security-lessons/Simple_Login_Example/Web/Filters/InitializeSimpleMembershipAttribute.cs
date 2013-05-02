@@ -25,15 +25,15 @@ namespace Web.Filters
         {
             public SimpleMembershipInitializer()
             {
-                //NOTE: this is here when you create a new project in VS, but we don't need it because
-                //we are initializing the database in app_start in global.ashx
+                /*NOTE: this is here when you create a new project in VS, but we don't need it because
+                we are initializing the database in app_start in global.ashx*/
 
                 //Database.SetInitializer<ExampleContext>(null);
 
                 try
                 {
-                    //NOTE: this is here when you create a new project in VS, but we don't need it because
-                    //we are initializing the database in app_start in global.ashx
+                    /*NOTE: this is here when you create a new project in VS, but we don't need it because
+                                    we are initializing the database in app_start in global.ashx*/
 
                     //using (var context = new ExampleContext())
                     //{
@@ -45,10 +45,10 @@ namespace Web.Filters
                     //}
 
                     //Tell WebSecurity what connection string and user table data to use...
-                    WebSecurity.InitializeDatabaseConnection(ExampleContext.ConnectionString, 
-                        ExampleContext.UserTableName, 
-                        ExampleContext.UserIdProperty, 
-                        ExampleContext.UserNameProperty, autoCreateTables: true);
+                    WebSecurity.InitializeDatabaseConnection(SimpleLoginExampleContext.ConnectionString, 
+                        SimpleLoginExampleContext.UserTableName, 
+                        SimpleLoginExampleContext.UserIdProperty, 
+                        SimpleLoginExampleContext.UserNameProperty, autoCreateTables: true);
                 }
                 catch (Exception ex)
                 {

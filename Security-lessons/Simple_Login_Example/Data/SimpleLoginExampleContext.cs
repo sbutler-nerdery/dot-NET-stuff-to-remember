@@ -3,9 +3,9 @@ using Data.Models;
 
 namespace Data
 {
-    public class ExampleContext : DbContext
+    public class SimpleLoginExampleContext : DbContext
     {
-        public ExampleContext() : base("SimpleLoginExample"){ }
+        public SimpleLoginExampleContext() : base("SimpleLoginExample"){ }
 
         public static readonly string ConnectionString = "DefaultConnection";
         public static readonly string UserTableName = "Users";

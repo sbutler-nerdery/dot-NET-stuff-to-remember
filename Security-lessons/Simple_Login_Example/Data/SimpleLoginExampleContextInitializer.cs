@@ -2,9 +2,9 @@
 
 namespace Data
 {
-    public class ExampleContextInitializer : DropCreateDatabaseIfModelChanges<ExampleContext>
+    public class SimpleLoginExampleContextInitializer : DropCreateDatabaseIfModelChanges<SimpleLoginExampleContext>
     {
-        protected override void Seed(ExampleContext context)
+        protected override void Seed(SimpleLoginExampleContext context)
         {
             //ExampleUser dummyUser = new ExampleUser { UserName = "Dummy"};
             //context.Users.Add(dummyUser);

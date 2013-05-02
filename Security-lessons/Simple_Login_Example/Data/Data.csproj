@@ -44,8 +44,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ExampleContext.cs" />
-    <Compile Include="ExampleContextInitializer.cs" />
+    <Compile Include="SimpleLoginExampleContext.cs" />
+    <Compile Include="SimpleLoginExampleContextInitializer.cs" />
     <Compile Include="Models\ExampleUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
