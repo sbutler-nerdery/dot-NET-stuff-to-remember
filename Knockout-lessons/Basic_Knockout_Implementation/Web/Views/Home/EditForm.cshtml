@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "EditForm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    <script type="text/javascript">
+        var json = JSON.parse('@Html.Raw(ViewBag.Json)');
+        var viewModel = KnockoutBasics.ViewModels.ContentViewModel(json);
+        viewModel.applyBindings();
+    </script>
+}
+<h2>EditForm</h2>
+
+<div class="blog">
+    <div data-bind="foreach: blogs">
+        <h3 data-bind="text: Name"></h3>
+        <div data-bind="foreach: Posts">
+            <div class="post">
+                <h4 data-bind="text: Title"></h4>
+                <div>
+                    <p data-bind="text: Content, visible: IsInEditMode() == false"></p>
+                    <textarea data-bind="text: Content, visible: IsInEditMode() == true"></textarea>            
+                </div>
+                <span data-bind="text: Title, click: toggleEditMode">Edit Post</span>
+            </div>           
+        </div>
+        <button type="button">Edit Blog</button>
+    </div>
+</div>
