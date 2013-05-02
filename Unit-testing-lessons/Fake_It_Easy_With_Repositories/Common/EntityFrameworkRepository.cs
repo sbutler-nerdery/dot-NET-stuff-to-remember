@@ -20,13 +20,13 @@ namespace Common
 
         public IQueryable<T> GetAll()
         {
-            return DbSet.AsQueryable();;
+            return DbSet.AsQueryable();
         }
 
-        //public IQueryable<T> GetAll(params string[] includes)
-        //{
-        //    return DbSet.IncludeAll(includes);
-        //}
+        public IQueryable<T> GetAll(params string[] includes)
+        {
+            return DbSet.IncludeAll(includes);
+        }
 
         public IQueryable<T> GetAll(params Expression<Func<T, object>>[] includes)
         {

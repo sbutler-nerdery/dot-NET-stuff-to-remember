@@ -28,7 +28,7 @@ namespace Common.Test
                 {
                     new Blog {BlogId = 1, Name = "Test Blog", Posts = new List<Post>()}
                 };
-            A.CallTo(() => _repository.GetAll()).Returns(fakeBlogs.AsQueryable());
+            A.CallTo(() => _repository.GetAll("Posts")).Returns(fakeBlogs.AsQueryable());
             A.CallTo(() => _repository.SubmitChanges()).Throws(new Exception("Something terrible happened!"));
 
             var response = _service.CreateBlogPost(blogId, "Title", "something profound");
