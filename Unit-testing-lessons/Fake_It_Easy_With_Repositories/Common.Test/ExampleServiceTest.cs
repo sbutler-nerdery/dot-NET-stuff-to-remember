@@ -21,6 +21,21 @@ namespace Common.Test
         }
 
         [TestMethod]
+        public void CreateBlogPost_Success()
+        {
+            const int blogId = 1;
+            var fakeBlogs = new List<Blog>
+                {
+                    new Blog {BlogId = 1, Name = "Test Blog", Posts = new List<Post>()}
+                };
+            A.CallTo(() => _repository.GetAll("Posts")).Returns(fakeBlogs.AsQueryable());
+
+            var response = _service.CreateBlogPost(blogId, "Title", "something profound");
+            Assert.AreEqual(response.IsError, false);
+            Assert.AreEqual(response.Message, string.Format("Post successfully added to blog id {0}!", blogId));
+        }
+
+        [TestMethod]
         public void CreateBlogPost_Blog_Error_Occurred()
         {
             const int blogId = 1;
@@ -28,7 +43,7 @@ namespace Common.Test
                 {
                     new Blog {BlogId = 1, Name = "Test Blog", Posts = new List<Post>()}
                 };
-            A.CallTo(() => _repository.GetAll()).Returns(fakeBlogs.AsQueryable());
+            A.CallTo(() => _repository.GetAll("Posts")).Returns(fakeBlogs.AsQueryable());
             A.CallTo(() => _repository.SubmitChanges()).Throws(new Exception("Something terrible happened!"));
 
             var response = _service.CreateBlogPost(blogId, "Title", "something profound");
@@ -41,7 +56,7 @@ namespace Common.Test
         {
             const int blogId = 1;
             var fakeBlogs = new List<Blog>();
-            A.CallTo(() => _repository.GetAll()).Returns(fakeBlogs.AsQueryable());
+            A.CallTo(() => _repository.GetAll("Posts")).Returns(fakeBlogs.AsQueryable());
 
             var response = _service.CreateBlogPost(blogId, "Title", "something profound");
             Assert.AreEqual(response.IsError, true);

@@ -46,7 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extensions.cs" />
-    <Compile Include="EntityFrameworkUnitOfWork.cs" />
     <Compile Include="ExampleService.cs" />
     <Compile Include="IExampleService.cs" />
     <Compile Include="IRepository.cs" />

@@ -18,7 +18,6 @@ namespace Application
             //Set up ninject stuff...
             Console.WriteLine("Setting up ninject...");
             var kernal = new StandardKernel();
-            kernal.Bind<IUnitOfWork>().To(typeof(EntityFrameworkUnitOfWork));
             kernal.Bind(typeof(IRepository<>)).To(typeof(EntityFrameworkRepository<>));
             kernal.Bind(typeof(DbContext)).To(typeof(FakeItEasyContext));
             kernal.Bind<IExampleService>().To<ExampleService>();

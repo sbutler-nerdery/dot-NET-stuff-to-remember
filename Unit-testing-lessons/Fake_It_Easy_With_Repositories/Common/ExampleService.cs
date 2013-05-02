@@ -26,7 +26,7 @@ namespace Common
         {
             var response = new Response{ IsError = false, Message = string.Format("Post successfully added to blog id {0}!", blogId)};
 
-            var blogToUpdate = _Repository.GetAll(blog => blog.Posts)
+            var blogToUpdate = _Repository.GetAll("Posts")
                 .FirstOrDefault(blog => blog.BlogId == blogId);
 
             //Return an error if the blog is null

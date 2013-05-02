@@ -8,14 +8,14 @@ namespace Common
 {
     public class EntityFrameworkRepository<T> : IRepository<T> where T : class
     {
-        private readonly EntityFrameworkUnitOfWork _unitOfWork;
+        private readonly DbContext _context;
         private DbSet<T> DbSet { get; set; }
 
         [Inject]
-        public EntityFrameworkRepository(IUnitOfWork unitOfWork)
+        public EntityFrameworkRepository(DbContext context)
         {
-            _unitOfWork = (EntityFrameworkUnitOfWork)unitOfWork;
-            DbSet = _unitOfWork.CreateDbSet<T>();
+            _context = context;
+            DbSet = _context.Set<T>(); ;
         }
 
         public IQueryable<T> GetAll()
@@ -23,10 +23,10 @@ namespace Common
             return DbSet.AsQueryable();;
         }
 
-        //public IQueryable<T> GetAll(params string[] includes)
-        //{
-        //    return DbSet.IncludeAll(includes);
-        //}
+        public IQueryable<T> GetAll(params string[] includes)
+        {
+            return DbSet.IncludeAll(includes);
+        }
 
         public IQueryable<T> GetAll(params Expression<Func<T, object>>[] includes)
         {
@@ -45,7 +45,7 @@ namespace Common
 
         public void SubmitChanges()
         {
-            _unitOfWork.SubmitChanges();
+            _context.SaveChanges();
         }
     }
 }
