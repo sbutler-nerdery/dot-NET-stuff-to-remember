@@ -12,7 +12,7 @@ namespace Web
                         "~/Scripts/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-{version}.js"));
+                        "~/Scripts/jquery-ui-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.unobtrusive*",
@@ -22,6 +22,7 @@ namespace Web
                         "~/Scripts/knockout*"));
 
             bundles.Add(new ScriptBundle("~/bundles/myStuff").Include(
+                        "~/Scripts/global.js",
                         "~/Scripts/ViewModel.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
@@ -29,7 +30,7 @@ namespace Web
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/*.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
                         "~/Content/themes/base/jquery.ui.core.css",

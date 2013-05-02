@@ -15,6 +15,13 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         self.PostId = ko.observable();
         self.Title = ko.observable();
         self.Content = ko.observable();
+        self.IsInEditMode = ko.observable(false);
+        
+        //Methods
+        self.toggleEditMode = function () {
+            this.IsInEditMode(!this.IsInEditMode());
+        };
+        
         return self;
     };
 
@@ -24,11 +31,11 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         self.page = ko.observable(0);
         self.pageSize = ko.observable(10);
 
-        ko.mapping.fromJS(blogsJson, null, self.blogs);
+        ko.mapping.fromJS(blogsJson, {}, self.blogs);
 
         //Methods
-        self.applyBindings = function(toElement) {
-            ko.applyBindings(self, $(toElement).get(0));
+        self.applyBindings = function() {
+            ko.applyBindings(self);
         };
 
         return self;

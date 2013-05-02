@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Newtonsoft.Json;
+using Web.Data;
 using Web.Models;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -12,24 +14,28 @@ namespace Web.Controllers
     {
         public ActionResult Index()
         {
-            var blogs = new List<Blog>();
-
-            for (var i = 0; i < 5; i++)
-            {
-                var blog = new Blog {BlogId = i, Name = string.Format("Blog {0}",i),
-                Posts = new List<Post>()};
-                for (var j = 0; j < 2; j++)
-                {
-                    var post = new Post { PostId = j, Title = string.Format("Post #{0}",j), 
-                        Content = string.Format("Meaning full content for post #{0}",j)};
-                    blog.Posts.Add(post);
-                }
-                blogs.Add(blog);
-            }
-
-            ViewBag.Json = JsonConvert.SerializeObject(blogs);
+            GetSeedBlogs();
 
             return View();
+        }
+
+        public ActionResult EditForm()
+        {
+            GetSeedBlogs();
+            return View();
+        }
+
+        private void GetSeedBlogs()
+        {
+            var blogs = new List<BlogViewModel>();
+
+            using (var context = new KnockoutBasicsContext())
+            {
+                var data = context.Blogs.Include("Posts").ToList();
+                data.ForEach(model => blogs.Add(new BlogViewModel(model)));
+            }
+
+            ViewBag.Json = JsonConvert.SerializeObject(blogs);            
         }
     }
 }

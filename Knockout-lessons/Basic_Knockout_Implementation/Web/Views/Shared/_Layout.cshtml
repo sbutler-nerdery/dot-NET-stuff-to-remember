@@ -6,6 +6,7 @@
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         <meta name="viewport" content="width=device-width" />
         @Styles.Render("~/Content/css")
+        @*@Styles.Render("~/Content/themes/base/css")*@
         @Scripts.Render("~/bundles/modernizr")
     </head>
     <body>
@@ -21,6 +22,7 @@
                     <nav>
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Edit Form", "EditForm", "Home")</li>
                         </ul>
                     </nav>
                 </div>
@@ -41,6 +43,7 @@
         </footer>
 
         @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryui")
         @Scripts.Render("~/bundles/knockout")
         @Scripts.Render("~/bundles/myStuff")
         @RenderSection("scripts", required: false)
