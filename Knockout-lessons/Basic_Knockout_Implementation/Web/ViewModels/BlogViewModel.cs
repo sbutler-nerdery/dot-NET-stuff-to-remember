@@ -18,33 +18,20 @@ namespace Web.ViewModels
             BlogId = blog.BlogId;
             Name = blog.Name;
             IsInEditMode = false;
-
             Posts = new List<PostViewModel>();
-            blog.Posts.ForEach(post =>
-                {
-                    var addMe = new PostViewModel
-                        {
-                            PostId = post.PostId,
-                            Title = post.Title,
-                            Content = post.Content
-                        };
-                    Posts.Add(addMe);
-                });
+
+            blog.Posts.OrderByDescending(x => x.PostId).ToList().ForEach(post =>
+            {
+                var addMe = new PostViewModel(post);
+                Posts.Add(addMe);
+            });
         }
 
         public Blog GetDataModel()
         {
             var blog = new Blog {BlogId = BlogId, Name = Name};
-            Posts.ForEach(post =>
-            {
-                var addMe = new Post
-                {
-                    PostId = post.PostId,
-                    Title = post.Title,
-                    Content = post.Content
-                };
-                blog.Posts.Add(addMe);
-            });
+            blog.Posts = new List<Post>();
+            Posts.ForEach(post => blog.Posts.Add(post.GetDataModel()));
 
             return blog;
         }

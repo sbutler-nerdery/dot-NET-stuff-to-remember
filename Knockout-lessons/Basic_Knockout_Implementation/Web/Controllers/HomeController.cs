@@ -35,7 +35,9 @@ namespace Web.Controllers
                 data.ForEach(model => blogs.Add(new BlogViewModel(model)));
             }
 
-            ViewBag.Json = JsonConvert.SerializeObject(blogs);            
+            blogs = blogs.OrderByDescending(x => x.BlogId).ToList();
+
+            ViewBag.Json = JsonConvert.SerializeObject(blogs).Replace("'", "\\'");            
         }
     }
 }

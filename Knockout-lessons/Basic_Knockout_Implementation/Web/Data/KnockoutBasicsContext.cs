@@ -11,5 +11,6 @@ namespace Web.Data
     {
         public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<ErrorLog> ErrorLogs { get; set; }
     }
 }

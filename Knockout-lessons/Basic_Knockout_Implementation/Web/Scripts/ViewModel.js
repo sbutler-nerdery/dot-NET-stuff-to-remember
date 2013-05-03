@@ -17,14 +17,15 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         self.isInEditMode = ko.observable();
         
         //Non mapped properties
-        var defaultEditText = (self.blogId() == 0) ? "Save" : "Edit Blog";
+        var editText = "Edit Blog";
+        var doneText = "Done";
         self.isInEditMode = ko.observable((self.blogId() == 0));
-        self.editModeText = ko.observable(defaultEditText);
+        self.editModeText = ko.observable((self.blogId() == 0) ? doneText : editText);
 
         //Non mapped methods
         self.toggleEditMode = function () {
             self.isInEditMode(!self.isInEditMode());
-            self.editModeText((self.isInEditMode()) ? "Save" : defaultEditText);
+            self.editModeText((self.isInEditMode()) ? doneText : editText);
         };
 
         self.addPost = function () {
@@ -44,14 +45,15 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         ko.mapping.fromJS(data, {}, self);
         
         //Non mapped properties
-        var defaultEditText = (self.postId() == 0) ? "Save" : "Edit Post";
+        var defaultEditText = "Edit Post";
+        var doneText = "Done";
         self.isInEditMode = ko.observable((self.postId() == 0));
-        self.editModeText = ko.observable(defaultEditText);
+        self.editModeText = ko.observable((self.postId() == 0) ? doneText : defaultEditText);
         
         //Non mapped methods
         self.toggleEditMode = function () {
             self.isInEditMode(!self.isInEditMode());
-            self.editModeText((self.isInEditMode()) ? "Save" : defaultEditText);
+            self.editModeText((self.isInEditMode()) ? doneText : defaultEditText);
         };
 
         return self;
@@ -60,6 +62,7 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
     KnockoutBasics.ViewModels.ContentViewModel = function(blogsJson) {
         var self = this;
         self.blogs = ko.observableArray();
+        self.serverMessage = ko.observable("");
 
         var mappingOptions = {
             create: function (options) {
@@ -76,7 +79,12 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
 
         self.save = function () {
             var blogs = ko.mapping.toJS(self.blogs);
-            KnockoutBasics.Server.postJson(blogs);
+            KnockoutBasics.Server.postJson(blogs, self.reloadData);
+        };
+
+        self.reloadData = function (updatedObjects, message) {
+            ko.mapping.fromJS(updatedObjects, mappingOptions, self.blogs);
+            self.serverMessage(message);
         };
 
         self.addBlog = function () {
