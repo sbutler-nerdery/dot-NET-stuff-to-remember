@@ -32,6 +32,23 @@ namespace Web.ViewModels
                 });
         }
 
+        public Blog GetDataModel()
+        {
+            var blog = new Blog {BlogId = BlogId, Name = Name};
+            Posts.ForEach(post =>
+            {
+                var addMe = new Post
+                {
+                    PostId = post.PostId,
+                    Title = post.Title,
+                    Content = post.Content
+                };
+                blog.Posts.Add(addMe);
+            });
+
+            return blog;
+        }
+
         [JsonProperty("blogId")]
         public int BlogId { get; set; }
         [JsonProperty("name")]

@@ -12,12 +12,15 @@
 <h2>Edit Form</h2>
 
 <div class="blog">
+    <a href="javascript:;" data-bind="click: addBlog">Add Blog</a>
     <div data-bind="foreach: blogs">
         <div>
             <h3 data-bind="text: name, visible: (isInEditMode() == false)"></h3>
             <input type="text" data-bind="value: name, visible: (isInEditMode() == true)"/>
         </div>
         <a href="javascript:;" data-bind="click: toggleEditMode, text: editModeText">Edit Blog Name</a>
+        <a href="javascript:;" data-bind="click: function() { $parent.removeBlog($data) }">Remove Blog</a>
+        <a href="javascript:;" data-bind="click: addPost">Add Post</a>
         <div data-bind="foreach: posts">
             <div class="post">
                 <h4 data-bind="text: title, visible: (isInEditMode() == false)"></h4>
@@ -27,7 +30,9 @@
                     <textarea data-bind="text: content, visible: (isInEditMode() == true)"></textarea>            
                 </div>
                 <a href="javascript:;" data-bind="click: toggleEditMode, text: editModeText">Edit Post</a>
+                <a href="javascript:;" data-bind="click: function() { $parent.removePost($data) }">Remove Post</a>
             </div>           
         </div>
     </div>
+    <button type="button" data-bind="click: save" >Save</button>
 </div>

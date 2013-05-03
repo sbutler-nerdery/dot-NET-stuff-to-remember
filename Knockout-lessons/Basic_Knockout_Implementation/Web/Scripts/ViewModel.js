@@ -16,15 +16,24 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         ko.mapping.fromJS(data, mappingOptions, self);
         self.isInEditMode = ko.observable();
         
-        //Additional properties
-        var defaultEditText = "Edit Blog";
-        self.isInEditMode = ko.observable(false);
+        //Non mapped properties
+        var defaultEditText = (self.blogId() == 0) ? "Save" : "Edit Blog";
+        self.isInEditMode = ko.observable((self.blogId() == 0));
         self.editModeText = ko.observable(defaultEditText);
 
-        //Additional methods
+        //Non mapped methods
         self.toggleEditMode = function () {
             self.isInEditMode(!self.isInEditMode());
             self.editModeText((self.isInEditMode()) ? "Save" : defaultEditText);
+        };
+
+        self.addPost = function () {
+            var newPost = { postId: 0, title: "New Post", content: "Put new content here..." };
+            self.posts.unshift(new KnockoutBasics.ViewModels.post(newPost));
+        };
+
+        self.removePost = function(post) {
+            self.posts.remove(post);
         };
 
         return self;
@@ -34,12 +43,12 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         var self = this;
         ko.mapping.fromJS(data, {}, self);
         
-        //Additional properties
-        var defaultEditText = "Edit Post";
-        self.isInEditMode = ko.observable(false);
+        //Non mapped properties
+        var defaultEditText = (self.postId() == 0) ? "Save" : "Edit Post";
+        self.isInEditMode = ko.observable((self.postId() == 0));
         self.editModeText = ko.observable(defaultEditText);
         
-        //Additional methods
+        //Non mapped methods
         self.toggleEditMode = function () {
             self.isInEditMode(!self.isInEditMode());
             self.editModeText((self.isInEditMode()) ? "Save" : defaultEditText);
@@ -51,8 +60,6 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
     KnockoutBasics.ViewModels.ContentViewModel = function(blogsJson) {
         var self = this;
         self.blogs = ko.observableArray();
-        //self.page = ko.observable(0);
-        //self.pageSize = ko.observable(10);
 
         var mappingOptions = {
             create: function (options) {
@@ -65,6 +72,20 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         //Methods
         self.applyBindings = function() {
             ko.applyBindings(self);
+        };
+
+        self.save = function () {
+            var blogs = ko.mapping.toJS(self.blogs);
+            KnockoutBasics.Server.postJson(blogs);
+        };
+
+        self.addBlog = function () {
+            var newBlog = { blogId: 0, name: "New Blog", posts: [] };
+            self.blogs.unshift(new KnockoutBasics.ViewModels.blog(newBlog));
+        };
+
+        self.removeBlog = function(blog) {
+            self.blogs.remove(blog);
         };
         
         return self;
