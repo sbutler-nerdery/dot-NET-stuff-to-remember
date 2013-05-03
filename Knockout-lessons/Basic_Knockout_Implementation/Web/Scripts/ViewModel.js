@@ -1,4 +1,6 @@
-﻿var KnockoutBasics = KnockoutBasics || {};
+﻿/*Knockout validation example: http://jsfiddle.net/alexdresko/KHFn8/2403/ */
+
+var KnockoutBasics = KnockoutBasics || {};
 KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
 
 (function ($, KnockoutBasics) {
@@ -14,6 +16,9 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         };
 
         ko.mapping.fromJS(data, mappingOptions, self);
+        //Add validation...
+        self.name.extend({ required: true }); //{ message:"Blog name cannot be blank" }
+
         self.isInEditMode = ko.observable();
         
         //Non mapped properties
@@ -49,6 +54,10 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         var doneText = "Done";
         self.isInEditMode = ko.observable((self.postId() == 0));
         self.editModeText = ko.observable((self.postId() == 0) ? doneText : defaultEditText);
+        self.errors = ko.computed = function () {
+            var validationGroup = ko.validation.group(self);
+            return (validationGroup.showAllMessages() != "");
+        };
         
         //Non mapped methods
         self.toggleEditMode = function () {
@@ -63,6 +72,10 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         var self = this;
         self.blogs = ko.observableArray();
         self.serverMessage = ko.observable("");
+        self.errors = ko.computed = function() {
+            var validationGroup = ko.validation.group(self, { deep: true });
+            return (validationGroup.showAllMessages() != "");
+        };
 
         var mappingOptions = {
             create: function (options) {
@@ -78,8 +91,16 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         };
 
         self.save = function () {
-            var blogs = ko.mapping.toJS(self.blogs);
-            KnockoutBasics.Server.postJson(blogs, self.reloadData);
+            if (!self.errors()) {
+                var blogs = ko.mapping.toJS(self.blogs);
+                KnockoutBasics.Server.postJson(blogs, self.reloadData);
+            }
+        };
+
+        self.submit = function () {
+            if (self.errors().length != 0) {
+                self.errors.showAllMessages();
+            }
         };
 
         self.reloadData = function (updatedObjects, message) {

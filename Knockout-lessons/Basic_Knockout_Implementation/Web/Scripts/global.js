@@ -19,7 +19,7 @@
                     //Pass the updated json back to the caller
                     try {
                         if (!data.Error) {
-                            var json = JSON.parse(data.Updated);
+                            var json = JSON.parse(data.Updated.replace("'","\'"));
                             callback(json, data.Message);
                         } else { //Return the old data... 
                             callback(blogs, data.Message);

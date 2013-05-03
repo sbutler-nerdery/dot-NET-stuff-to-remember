@@ -105,7 +105,7 @@ namespace Web.Controllers
                     data.ForEach(model => blogs.Add(new BlogViewModel(model)));
                     blogs = blogs.OrderByDescending(x => x.BlogId).ToList();
 
-                    response.Updated = JsonConvert.SerializeObject(blogs).Replace("'", "\\'");
+                    response.Updated = JsonConvert.SerializeObject(blogs);
                 }
             }
             catch (Exception ex)

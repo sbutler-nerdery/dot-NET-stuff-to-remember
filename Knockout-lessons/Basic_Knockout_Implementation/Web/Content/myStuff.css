@@ -1,7 +1,7 @@
-﻿.blog {
-    
-}
-
-.post {
+﻿.post {
     margin-left: 25px;
 }
+/* knockout validation stuff */
+.validationMessage { color: Red; }
+.validationElement { border-color: red;border-top-width: 2px;}
+.validationField { border: Red;}
