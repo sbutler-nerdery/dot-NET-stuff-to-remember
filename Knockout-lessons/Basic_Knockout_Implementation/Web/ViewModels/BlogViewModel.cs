@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Newtonsoft.Json;
 using Web.Models;
 
 namespace Web.ViewModels
@@ -16,6 +17,8 @@ namespace Web.ViewModels
         {
             BlogId = blog.BlogId;
             Name = blog.Name;
+            IsInEditMode = false;
+
             Posts = new List<PostViewModel>();
             blog.Posts.ForEach(post =>
                 {
@@ -23,14 +26,20 @@ namespace Web.ViewModels
                         {
                             PostId = post.PostId,
                             Title = post.Title,
-                            Content = post.Content
+                            Content = post.Content,
+                            IsInEditMode = false
                         };
                     Posts.Add(addMe);
                 });
         }
 
+        [JsonProperty("blogId")]
         public int BlogId { get; set; }
+        [JsonProperty("name")]
         public string Name { get; set; }
+        [JsonProperty("isInEditMode")]
+        public bool IsInEditMode { get; set; }
+        [JsonProperty("posts")]
         public List<PostViewModel> Posts { get; set; }        
     }
 }

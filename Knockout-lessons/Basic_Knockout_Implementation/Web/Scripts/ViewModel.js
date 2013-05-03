@@ -4,23 +4,20 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
 (function ($, KnockoutBasics) {
     KnockoutBasics.ViewModels.Blog = function () {
         var self = this;
-        self.BlogId = ko.observable();
-        self.Name = ko.observable();
-        self.Posts = ko.observableArray();
+        self.blogId = ko.observable();
+        self.name = ko.observable();
+        self.posts = ko.observableArray();
+        self.isInEditMode = ko.observable();
+        
         return self;
     };
     
     KnockoutBasics.ViewModels.Post = function () {
         var self = this;
-        self.PostId = ko.observable();
-        self.Title = ko.observable();
-        self.Content = ko.observable();
-        self.IsInEditMode = ko.observable(false);
-        
-        //Methods
-        self.toggleEditMode = function () {
-            this.IsInEditMode(!this.IsInEditMode());
-        };
+        self.postId = ko.observable();
+        self.title = ko.observable();
+        self.content = ko.observable();
+        self.isInEditMode = ko.observable();
         
         return self;
     };
@@ -36,6 +33,10 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         //Methods
         self.applyBindings = function() {
             ko.applyBindings(self);
+        };
+        
+        self.toggleEditMode = function (model) {
+            model.isInEditMode(!model.isInEditMode());
         };
 
         return self;

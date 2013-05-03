@@ -9,21 +9,23 @@
         viewModel.applyBindings();
     </script>
 }
-<h2>EditForm</h2>
+<h2>Edit Form</h2>
 
 <div class="blog">
     <div data-bind="foreach: blogs">
-        <h3 data-bind="text: Name"></h3>
-        <div data-bind="foreach: Posts">
+        <h3 data-bind="text: name, visible: (isInEditMode() == false)"></h3>
+        <input type="text" data-bind="value: name, visible: (isInEditMode() == true)"/>
+        <a href="javascript:;" data-bind="click: function() { $root.toggleEditMode($data); }">Edit Blog Name</a>
+        <div data-bind="foreach: posts">
             <div class="post">
-                <h4 data-bind="text: Title"></h4>
+                <h4 data-bind="text: title, visible: (isInEditMode() == false)"></h4>
+                <input type="text" data-bind="value: title, visible: (isInEditMode() == true)"/>
                 <div>
-                    <p data-bind="text: Content, visible: IsInEditMode() == false"></p>
-                    <textarea data-bind="text: Content, visible: IsInEditMode() == true"></textarea>            
+                    <p data-bind="text: content, visible: (isInEditMode() == false)"></p>
+                    <textarea data-bind="text: content, visible: (isInEditMode() == true)"></textarea>            
                 </div>
-                <span data-bind="text: Title, click: toggleEditMode">Edit Post</span>
+                <a href="javascript:;" data-bind="click: function() { $root.toggleEditMode($data); }">Edit Post</a>
             </div>           
         </div>
-        <button type="button">Edit Blog</button>
     </div>
 </div>
