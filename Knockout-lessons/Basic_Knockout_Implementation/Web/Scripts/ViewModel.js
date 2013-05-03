@@ -1,6 +1,15 @@
 ﻿var KnockoutBasics = KnockoutBasics || {};
 KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
 
+var mapping = {
+    IsInEditMode: ko.observable(false),
+        
+    //Methods
+    toggleEditMode: function () {
+        this.IsInEditMode(!this.IsInEditMode());
+    }
+};
+
 (function ($, KnockoutBasics) {
     KnockoutBasics.ViewModels.Blog = function () {
         var self = this;
@@ -15,12 +24,6 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         self.PostId = ko.observable();
         self.Title = ko.observable();
         self.Content = ko.observable();
-        self.IsInEditMode = ko.observable(false);
-        
-        //Methods
-        self.toggleEditMode = function () {
-            this.IsInEditMode(!this.IsInEditMode());
-        };
         
         return self;
     };
@@ -31,7 +34,7 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         self.page = ko.observable(0);
         self.pageSize = ko.observable(10);
 
-        ko.mapping.fromJS(blogsJson, {}, self.blogs);
+        ko.mapping.fromJS(blogsJson, mapping, self.blogs);
 
         //Methods
         self.applyBindings = function() {

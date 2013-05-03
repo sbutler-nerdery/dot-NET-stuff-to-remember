@@ -10,6 +10,5 @@ namespace Web.ViewModels
         public int PostId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }
-        public bool IsInEditMode { get; set; }
     }
 }

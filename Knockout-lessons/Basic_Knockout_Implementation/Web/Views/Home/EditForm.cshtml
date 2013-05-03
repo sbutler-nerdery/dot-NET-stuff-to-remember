@@ -18,8 +18,8 @@
             <div class="post">
                 <h4 data-bind="text: Title"></h4>
                 <div>
-                    <p data-bind="text: Content, visible: IsInEditMode() == false"></p>
-                    <textarea data-bind="text: Content, visible: IsInEditMode() == true"></textarea>            
+                    <p data-bind="text: Content, visible: (!IsInEditMode())"></p>
+                    <textarea data-bind="text: Content, visible: (IsInEditMode())"></textarea>            
                 </div>
                 <span data-bind="text: Title, click: toggleEditMode">Edit Post</span>
             </div>           
