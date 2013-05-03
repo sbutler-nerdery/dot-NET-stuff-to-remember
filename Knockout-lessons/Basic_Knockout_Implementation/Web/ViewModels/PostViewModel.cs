@@ -14,7 +14,5 @@ namespace Web.ViewModels
         public string Title { get; set; }
         [JsonProperty("content")]
         public string Content { get; set; }
-        [JsonProperty("isInEditMode")]
-        public bool IsInEditMode { get; set; }
     }
 }

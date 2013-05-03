@@ -26,8 +26,7 @@ namespace Web.ViewModels
                         {
                             PostId = post.PostId,
                             Title = post.Title,
-                            Content = post.Content,
-                            IsInEditMode = false
+                            Content = post.Content
                         };
                     Posts.Add(addMe);
                 });

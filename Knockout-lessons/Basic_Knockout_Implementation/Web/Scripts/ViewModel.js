@@ -2,43 +2,71 @@
 KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
 
 (function ($, KnockoutBasics) {
-    KnockoutBasics.ViewModels.Blog = function () {
+    KnockoutBasics.ViewModels.blog = function (data) {
         var self = this;
-        self.blogId = ko.observable();
-        self.name = ko.observable();
-        self.posts = ko.observableArray();
+        
+        var mappingOptions = {
+            posts: {
+                create: function (options) {
+                    return new KnockoutBasics.ViewModels.post(options.data);
+                }
+            }
+        };
+
+        ko.mapping.fromJS(data, mappingOptions, self);
         self.isInEditMode = ko.observable();
         
+        //Additional properties
+        var defaultEditText = "Edit Blog";
+        self.isInEditMode = ko.observable(false);
+        self.editModeText = ko.observable(defaultEditText);
+
+        //Additional methods
+        self.toggleEditMode = function () {
+            self.isInEditMode(!self.isInEditMode());
+            self.editModeText((self.isInEditMode()) ? "Save" : defaultEditText);
+        };
+
         return self;
     };
     
-    KnockoutBasics.ViewModels.Post = function () {
+    KnockoutBasics.ViewModels.post = function (data) {
         var self = this;
-        self.postId = ko.observable();
-        self.title = ko.observable();
-        self.content = ko.observable();
-        self.isInEditMode = ko.observable();
+        ko.mapping.fromJS(data, {}, self);
         
+        //Additional properties
+        var defaultEditText = "Edit Post";
+        self.isInEditMode = ko.observable(false);
+        self.editModeText = ko.observable(defaultEditText);
+        
+        //Additional methods
+        self.toggleEditMode = function () {
+            self.isInEditMode(!self.isInEditMode());
+            self.editModeText((self.isInEditMode()) ? "Save" : defaultEditText);
+        };
+
         return self;
     };
 
     KnockoutBasics.ViewModels.ContentViewModel = function(blogsJson) {
         var self = this;
         self.blogs = ko.observableArray();
-        self.page = ko.observable(0);
-        self.pageSize = ko.observable(10);
+        //self.page = ko.observable(0);
+        //self.pageSize = ko.observable(10);
 
-        ko.mapping.fromJS(blogsJson, {}, self.blogs);
+        var mappingOptions = {
+            create: function (options) {
+                return new KnockoutBasics.ViewModels.blog(options.data);
+            }
+        };
+
+        ko.mapping.fromJS(blogsJson, mappingOptions, self.blogs);
 
         //Methods
         self.applyBindings = function() {
             ko.applyBindings(self);
         };
         
-        self.toggleEditMode = function (model) {
-            model.isInEditMode(!model.isInEditMode());
-        };
-
         return self;
     };
 }(jQuery, KnockoutBasics));
