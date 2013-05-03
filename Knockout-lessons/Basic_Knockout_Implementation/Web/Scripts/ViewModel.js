@@ -3,9 +3,15 @@
 var KnockoutBasics = KnockoutBasics || {};
 KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
 
+//Make sure that validation decorates elements with classes.
+//also, insertMessages = false will keep it from creating span tags with error messages.
+ko.validation.configure({ decorateElement: true  });
+
 (function ($, KnockoutBasics) {
     KnockoutBasics.ViewModels.blog = function (data) {
         var self = this;
+        var editText = "Edit Blog";
+        var doneText = "Done";
         
         var mappingOptions = {
             posts: {
@@ -17,13 +23,10 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
 
         ko.mapping.fromJS(data, mappingOptions, self);
         //Add validation...
-        self.name.extend({ required: true }); //{ message:"Blog name cannot be blank" }
-
-        self.isInEditMode = ko.observable();
+        self.name.extend({ required: { message:"Blog name cannot be blank" } });
         
         //Non mapped properties
-        var editText = "Edit Blog";
-        var doneText = "Done";
+        self.isInEditMode = ko.observable();
         self.isInEditMode = ko.observable((self.blogId() == 0));
         self.editModeText = ko.observable((self.blogId() == 0) ? doneText : editText);
 
@@ -45,13 +48,18 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         return self;
     };
     
-    KnockoutBasics.ViewModels.post = function (data) {
+    KnockoutBasics.ViewModels.post = function(data) {
         var self = this;
-        ko.mapping.fromJS(data, {}, self);
-        
-        //Non mapped properties
         var defaultEditText = "Edit Post";
         var doneText = "Done";
+
+        ko.mapping.fromJS(data, {}, self);
+
+        //Add validation
+        self.title.extend({ required: { message: ' ' } }); //validation with no message
+        self.content.extend({ required: true }); //validation with default message
+
+        //Non mapped properties
         self.isInEditMode = ko.observable((self.postId() == 0));
         self.editModeText = ko.observable((self.postId() == 0) ? doneText : defaultEditText);
         self.errors = ko.computed = function () {
@@ -72,10 +80,7 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         var self = this;
         self.blogs = ko.observableArray();
         self.serverMessage = ko.observable("");
-        self.errors = ko.computed = function() {
-            var validationGroup = ko.validation.group(self, { deep: true });
-            return (validationGroup.showAllMessages() != "");
-        };
+        self.errors = ko.validation.group(self, {deep : true});
 
         var mappingOptions = {
             create: function (options) {
@@ -91,7 +96,7 @@ KnockoutBasics.ViewModels = KnockoutBasics.ViewModels || {};
         };
 
         self.save = function () {
-            if (!self.errors()) {
+            if (self.errors().length == 0) {
                 var blogs = ko.mapping.toJS(self.blogs);
                 KnockoutBasics.Server.postJson(blogs, self.reloadData);
             }
