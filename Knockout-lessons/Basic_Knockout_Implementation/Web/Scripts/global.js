@@ -7,12 +7,9 @@
     });
 
     APP.Timer = {
-        $myTimer: null,
         doOnce: function (callback, interval) {
-            $myTimer = setInterval(function () { callback(); APP.Timer.stopTimer(); }, interval);
-        },
-        stopTimer: function () {
-            window.clearInterval($myTimer);
+            var myTimer = null;
+            myTimer = setInterval(function () { callback(); window.clearInterval(myTimer); }, interval);
         }
     },
 
