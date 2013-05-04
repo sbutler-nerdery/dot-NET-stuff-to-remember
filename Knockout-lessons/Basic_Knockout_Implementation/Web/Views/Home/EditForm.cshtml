@@ -9,21 +9,32 @@
         viewModel.applyBindings();
     </script>
 }
-<h2>EditForm</h2>
-
+<h2>Edit Form</h2>
+<div class="serverMessage" data-bind="text: serverMessage, visible: (serverMessage() != '')"></div>
 <div class="blog">
-    <div data-bind="foreach: blogs">
-        <h3 data-bind="text: Name"></h3>
-        <div data-bind="foreach: Posts">
-            <div class="post">
-                <h4 data-bind="text: Title"></h4>
-                <div>
-                    <p data-bind="text: Content, visible: (!IsInEditMode())"></p>
-                    <textarea data-bind="text: Content, visible: (IsInEditMode())"></textarea>            
-                </div>
-                <span data-bind="text: Title, click: toggleEditMode">Edit Post</span>
-            </div>           
+    <a href="javascript:;" data-bind="click: addBlog">Add Blog</a>
+    <div data-bind="foreach: blogs" style="max-height:500px; overflow-y: scroll">
+        <div>
+            <h3 data-bind="text: name, visible: !isInEditMode()"></h3>
+            <input type="text" data-bind="value: name, visible: isInEditMode()"/>
+            <div>
+                <a href="javascript:;" data-bind="click: toggleEditMode, text: editModeText">Edit Blog Name</a>
+                <a href="javascript:;" data-bind="click: function() { $parent.removeBlog($data) }">Remove Blog</a>
+                <a href="javascript:;" data-bind="click: addPost">Add Post</a>                
+            </div>
         </div>
-        <button type="button">Edit Blog</button>
+        <div data-bind="foreach: posts" class="post">
+            <h4 data-bind="text: title, visible: !isInEditMode()"></h4>
+            <input type="text" data-bind="value: title, visible: isInEditMode()"/>
+            <div>
+                <p data-bind="text: content, visible: !isInEditMode()"></p>
+                <textarea data-bind="value: content, visible: isInEditMode()"></textarea>            
+                <div>
+                    <a href="javascript:;" data-bind="click: toggleEditMode, text: editModeText">Edit Post</a>
+                    <a href="javascript:;" data-bind="click: function() { $parent.removePost($data) }">Remove Post</a>                      
+                </div>
+            </div>        
+        </div>
     </div>
+    <button type="button" data-bind="click: save" >Save</button>
 </div>

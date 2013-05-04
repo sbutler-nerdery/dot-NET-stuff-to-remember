@@ -164,6 +164,7 @@
     </Compile>
     <Compile Include="Data\KnockoutBasicsContext.cs" />
     <Compile Include="Models\Blog.cs" />
+    <Compile Include="Models\ErrorLog.cs" />
     <Compile Include="Models\Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\BlogViewModel.cs" />
@@ -243,6 +244,8 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\knockout.mapping-2.4.1.js" />
+    <Content Include="Scripts\knockout.validation.debug.js" />
+    <Content Include="Scripts\knockout.validation.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="Scripts\ViewModel.js" />
     <Content Include="Web.config" />
