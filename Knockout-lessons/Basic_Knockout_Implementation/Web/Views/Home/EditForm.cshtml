@@ -10,7 +10,7 @@
     </script>
 }
 <h2>Edit Form</h2>
-<div style="color:red; font-size: large" data-bind="text: serverMessage, visible: (serverMessage() != '')"></div>
+<div class="serverMessage" data-bind="text: serverMessage, visible: (serverMessage() != '')"></div>
 <div class="blog">
     <a href="javascript:;" data-bind="click: addBlog">Add Blog</a>
     <div data-bind="foreach: blogs" style="max-height:500px; overflow-y: scroll">
@@ -24,7 +24,7 @@
             </div>
         </div>
         <div data-bind="foreach: posts" class="post">
-            <h4 data-bind="text: title, visible: !isInEditMode"></h4>
+            <h4 data-bind="text: title, visible: !isInEditMode()"></h4>
             <input type="text" data-bind="value: title, visible: isInEditMode()"/>
             <div>
                 <p data-bind="text: content, visible: !isInEditMode()"></p>

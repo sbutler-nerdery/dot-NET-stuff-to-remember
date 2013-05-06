@@ -1,6 +1,7 @@
 ﻿.post {
     margin-left: 25px;
 }
+.serverMessage { color: red; font-size: large;}
 /* knockout validation stuff */
 .validationMessage { color: Red; }
 .validationElement { border-color: red;border-top-width: 2px;}
