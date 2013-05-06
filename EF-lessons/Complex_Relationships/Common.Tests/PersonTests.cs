@@ -36,6 +36,14 @@ namespace Common.Tests
                 var joe = context.People.FirstOrDefault(x => x.Name == "Joe Blow");
                 var paul = context.People.FirstOrDefault(x => x.Name == "Paul Hart");
 
+                joe.Friends =
+                    context.People.Where(x => x.Friends.Select(y => y.PersonId).Contains(joe.PersonId))
+                           .ToList();
+
+                paul.Friends =
+                    context.People.Where(x => x.Friends.Select(y => y.PersonId).Contains(paul.PersonId))
+                           .ToList();
+
                 //They should both be friends with John Smith, so a count of one friend
                 Assert.AreEqual(joe.Friends.Count, 1);
                 Assert.AreEqual(paul.Friends.Count, 1);
@@ -77,31 +85,31 @@ namespace Common.Tests
             using (var context = new ComplexRelationshipContext())
             {
                 var theBigEvent = context.CompanyEvents.FirstOrDefault();
-                var joe = context.People.FirstOrDefault(x => x.Name == "Joe Blow");
+                var john = context.People.FirstOrDefault(x => x.Name.Contains("John"));
+
+                john.MyEventInvitations =
+                    context.CompanyEvents.Where(x => x.PeopleWhoAccepted.Select(y => y.PersonId).Contains(john.PersonId))
+                           .ToList();
+
+                Assert.AreEqual(theBigEvent.PeopleWhoAccepted.Count, 1);
+                Assert.AreEqual(john.AcceptedInvitations.Count, 1);
+            }
+        }
+
+        [TestMethod]
+        public void Joe_Declined_The_Invite()
+        {
+            using (var context = new ComplexRelationshipContext())
+            {
+                var theBigEvent = context.CompanyEvents.FirstOrDefault();
+                var joe = context.People.FirstOrDefault(x => x.Name.Contains("Joe"));
 
                 joe.MyEventInvitations =
                     context.CompanyEvents.Where(x => x.PeopleWhoAccepted.Select(y => y.PersonId).Contains(joe.PersonId))
                            .ToList();
 
-                Assert.AreEqual(theBigEvent.PeopleWhoAccepted.Count, 1);
-                Assert.AreEqual(joe.AcceptedInvitations.Count, 1);
-            }
-        }
-
-        [TestMethod]
-        public void Paul_Declined_The_Invite()
-        {
-            using (var context = new ComplexRelationshipContext())
-            {
-                var theBigEvent = context.CompanyEvents.FirstOrDefault();
-                var paul = context.People.FirstOrDefault(x => x.Name == "Paul hart");
-
-                paul.MyEventInvitations =
-                    context.CompanyEvents.Where(x => x.PeopleWhoDeclined.Select(y => y.PersonId).Contains(paul.PersonId))
-                           .ToList();
-
                 Assert.AreEqual(theBigEvent.PeopleWhoDeclined.Count, 1);
-                Assert.AreEqual(paul.DeclinedInvitations.Count, 1);
+                Assert.AreEqual(joe.DeclinedInvitations.Count, 1);
             }
         }
     }

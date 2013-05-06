@@ -26,7 +26,15 @@ namespace Common.Data
                     });
 
 
-            //Standard many to many relationships
+            /*
+            Standard many to many relationships... but why are we creating them this way?
+            Well, because we are creating multiple many to many relationships between the same two tables. Left to itself, 
+             EF will do something like:
+             - in the People table it will add these columns:
+                - Person_1 -- this is the PeopleInvited relationship
+                - Person_2 -- this is the PeopleWhoAccepted relationship
+                - Person_3 -- this is the PeopleWhoDeclined relationship
+            I don't want this to happen. I want a separate intermediary table for each relationship. */
             modelBuilder.Entity<CompanyEvent>().HasMany(c => c.PeopleInvited)
                 .WithMany(p => p.MyEventInvitations)
                 .Map(mc =>
