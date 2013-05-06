@@ -26,7 +26,6 @@ ko.validation.configure({ decorateElement: true });
         self.name.extend({ required: { message: "Blog name cannot be blank" } });
 
         //Non mapped properties
-        self.isInEditMode = ko.observable();
         self.isInEditMode = ko.observable((self.blogId() == 0));
         self.editModeText = ko.observable((self.blogId() == 0) ? doneText : editText);
 
