@@ -11,7 +11,7 @@ This is a collection of projects that will help refresh my memory for all things
   - How to use EF Fluent API
   - How to managing user groups and permissions.
   - (Project Complete) How to create a model with a list of objects that posts back using a form 
-  - How to use knockout with MVC 4 (a super simple example).
+  - (Project Complete) How to use knockout with MVC 4 (a super simple example).
   - (Project Complete) How to login to Facebook using the out of the box OAuth provided by .NET MVC.
   - How does the bundling work in ASP.NET
   - (Project Complete) How to unit test EF backed business objects with FakeItEasy.

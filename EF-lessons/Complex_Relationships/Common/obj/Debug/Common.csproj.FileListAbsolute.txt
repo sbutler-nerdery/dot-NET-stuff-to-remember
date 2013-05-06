@@ -1,0 +1,15 @@
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common\bin\Debug\Common.dll.config
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common\bin\Debug\Common.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common\bin\Debug\Common.pdb
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common\bin\Debug\EntityFramework.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common\bin\Debug\EntityFramework.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common\obj\Debug\Common.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common\obj\Debug\Common.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common\bin\Debug\Common.dll.config
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common\bin\Debug\Common.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common\bin\Debug\Common.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common\bin\Debug\EntityFramework.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common\bin\Debug\EntityFramework.xml
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common\obj\Debug\Common.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common\obj\Debug\Common.pdb

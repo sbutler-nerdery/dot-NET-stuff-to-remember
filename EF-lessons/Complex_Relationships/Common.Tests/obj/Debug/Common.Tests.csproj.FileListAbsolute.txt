@@ -1,0 +1,18 @@
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common.Tests\bin\Debug\Common.Tests.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common.Tests\bin\Debug\Common.Tests.pdb
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common.Tests\bin\Debug\Common.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common.Tests\bin\Debug\EntityFramework.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common.Tests\bin\Debug\Common.pdb
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common.Tests\bin\Debug\EntityFramework.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common.Tests\obj\Debug\Common.Tests.csprojResolveAssemblyReference.cache
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common.Tests\obj\Debug\Common.Tests.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\Complex_Relationships\Common.Tests\obj\Debug\Common.Tests.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\bin\Debug\Common.Tests.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\bin\Debug\Common.Tests.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\bin\Debug\Common.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\bin\Debug\EntityFramework.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\bin\Debug\Common.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\bin\Debug\EntityFramework.xml
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\obj\Debug\Common.Tests.csprojResolveAssemblyReference.cache
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\obj\Debug\Common.Tests.dll
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\obj\Debug\Common.Tests.pdb
