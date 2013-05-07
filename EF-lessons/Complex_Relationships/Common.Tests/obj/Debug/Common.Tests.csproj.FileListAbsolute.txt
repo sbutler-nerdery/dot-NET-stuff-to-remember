@@ -16,3 +16,4 @@ C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relatio
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\obj\Debug\Common.Tests.csprojResolveAssemblyReference.cache
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\obj\Debug\Common.Tests.dll
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\obj\Debug\Common.Tests.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\EF-lessons\Complex_Relationships\Common.Tests\bin\Debug\Common.Tests.dll.config

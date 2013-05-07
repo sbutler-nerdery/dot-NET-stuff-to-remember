@@ -13,6 +13,11 @@ namespace Common.Data
         public DbSet<Person> People { get; set; }
         public DbSet<CompanyEvent> CompanyEvents { get; set; }
 
+        public ComplexRelationshipContext()
+            : base("DefaultConnection")
+        {
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             //A many to many table that maps to itself.
