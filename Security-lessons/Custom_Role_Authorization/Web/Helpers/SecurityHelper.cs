@@ -5,6 +5,7 @@ using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
 using Web.Controllers;
+using Web.Data;
 
 namespace Web.Helpers
 {
@@ -32,7 +33,17 @@ namespace Web.Helpers
                             ActionName = method.Name
                         };
 
-                    //TODO: call database to get users and roles that belong to this permission
+                    using (var context = new UserRolesContext())
+                    {
+                        var row = context.Permissions.FirstOrDefault(x => x.Action == permission.ActionName
+                                                                          && x.Controller == permission.ControllerName);
+                        if (row != null)
+                        {
+                            permission.UserNames = row.UserNames.Split(new[] { ',' }).ToList();
+                            permission.Roles = row.RoleNames.Split(new[] { ',' }).ToList();                            
+                        }
+                    }
+
                     permissions.Add(permission);
                 }
             }
@@ -43,6 +54,11 @@ namespace Web.Helpers
 
     public class SecurityPermissionDefinition
     {
+        public SecurityPermissionDefinition()
+        {
+            Roles = new List<string>();
+            UserNames = new List<string>();
+        }
         public string ControllerName { get; set; }
         public string ActionName { get; set; }
         public string Url {
