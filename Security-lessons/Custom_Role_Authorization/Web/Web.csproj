@@ -163,6 +163,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Constants.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AnotherController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\UserRolesContext.cs" />
@@ -299,6 +300,7 @@
     <Content Include="Views\Account\_UpdateUserInformation.cshtml" />
     <Content Include="Views\Account\ManageCustomPermissions.cshtml" />
     <Content Include="Views\Account\EditCustomPermissions.cshtml" />
+    <Content Include="Views\Another\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

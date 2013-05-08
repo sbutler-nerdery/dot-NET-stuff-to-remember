@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using Web.Helpers;
 
 namespace Web.Controllers
 {
@@ -11,7 +12,7 @@ namespace Web.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "You must be logged in as a regular user!";
+            ViewBag.Message = GetPermisionMessage("Index", "Home");
 
             return View();
         }
@@ -19,21 +20,21 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult Index(string data)
         {
-            ViewBag.Message = "Post back!";
+            ViewBag.Message = "Post back works! " + GetPermisionMessage("Index", "Home"); ;
 
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "You must be logged in as an admin!";
+            ViewBag.Message = GetPermisionMessage("About", "Home");
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "You must be logged in as an admin!";
+            ViewBag.Message = GetPermisionMessage("Contact", "Home");
 
             return View();
         }

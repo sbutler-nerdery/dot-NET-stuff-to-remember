@@ -21,7 +21,8 @@ namespace Web.Data
 
             //Insert a default admin role
             var adminRoleName = Constants.ROLES_ADMIN;
-            var roles = new[] {adminRoleName, Constants.ROLES_VIEWER};
+            var viewerRoleName = Constants.ROLES_VIEWER;
+            var roles = new[] { adminRoleName, viewerRoleName };
 
             foreach (var role in roles)
             {
@@ -44,6 +45,67 @@ namespace Web.Data
             if (!Roles.GetRolesForUser(userName).Contains(adminRoleName))
             {
                 Roles.AddUserToRole(userName, adminRoleName);   
+            }
+
+            var bothRoles = adminRoleName + "," + viewerRoleName;
+            var accountControllerPermissions = new CustomPermission[]
+                {
+                    //Admin only
+                    new CustomPermission
+                        {
+                            Action = "ManageCustomPermissions", 
+                            Controller = "Account",
+                            RoleNames = adminRoleName                
+                        },
+                    new CustomPermission
+                        {
+                            Action = "EditCustomPermissions", 
+                            Controller = "Account",
+                            RoleNames = adminRoleName                
+                        },
+                    //All users
+                    new CustomPermission
+                        {
+                            Action = "LogOff", 
+                            Controller = "Account",
+                            RoleNames = bothRoles                
+                        },
+                    new CustomPermission
+                        {
+                            Action = "Disassociate", 
+                            Controller = "Account",
+                            RoleNames = bothRoles                
+                        },
+                    new CustomPermission
+                        {
+                            Action = "Manage", 
+                            Controller = "Account",
+                            RoleNames = bothRoles                
+                        },
+                    new CustomPermission
+                        {
+                            Action = "UpdateUserInfo", 
+                            Controller = "Account",
+                            RoleNames = bothRoles                
+                        },
+                    new CustomPermission
+                        {
+                            Action = "RemoveExternalLogins", 
+                            Controller = "Account",
+                            RoleNames = bothRoles                
+                        },
+                    new CustomPermission
+                        {
+                            Action = "ManageCustomPermissions", 
+                            Controller = "Account",
+                            RoleNames = bothRoles                
+                        }
+                };
+
+            foreach (var permission in accountControllerPermissions)
+            {
+                context.Permissions.Add(permission);
+                context.SaveChanges();
             }
         }
     }

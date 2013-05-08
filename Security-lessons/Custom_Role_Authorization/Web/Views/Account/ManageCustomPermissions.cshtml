@@ -3,6 +3,7 @@
 @{
     ViewBag.Title = "ManageCustomPermissions";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    var url = string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority);
 }
 
 <h2>ManageCustomPermissions</h2>
@@ -20,6 +21,10 @@
 
 @foreach (var item in Model.Permissions)
 {
+    if (string.IsNullOrEmpty(item.Url))
+    {
+        continue;
+    }
     var roles = "";
     var userNames = "";
     if (item.Roles != null)
@@ -32,13 +37,13 @@
     }    
     <tr>
         <td>
-            @Html.DisplayFor(m => item.Url)
+            @url@Html.DisplayFor(m => item.Url)
             @Html.HiddenFor(m => item.CustomPermissionId)
         </td>
         <td>@roles</td>
         <td>@userNames</td>
         <td>
-            @Html.ActionLink("View", "EditCustomPermissions", new { id=item.CustomPermissionId })
+            @Html.ActionLink("View","EditCustomPermissions","Account", new { c = item.ControllerName, a = item.ActionName}, null)
         </td>
     </tr>
 }

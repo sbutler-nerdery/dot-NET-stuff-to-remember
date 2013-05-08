@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using System.Web.Security;
 using Web.Data;
 using Web.Helpers;
+using Web.ViewModels;
 using WebMatrix.WebData;
 
 namespace Web.Controllers
@@ -15,12 +16,14 @@ namespace Web.Controllers
     [Authorize]
     public class BaseController : Controller
     {
+        protected List<CustomPermissionViewModel> Permissions;
+
         protected override void OnAuthorization(AuthorizationContext filterContext)
         {
             base.OnAuthorization(filterContext);
 
             //Note: only controllers that inherit from BaseController will work with this security helper.
-            var permissions = SecurityHelper.GetAllControllerPermissions();
+            Permissions = SecurityHelper.GetAllControllerPermissions().ToList();
 
             //Make sure that WebSecurity is initialized
             if (!WebSecurity.Initialized)
@@ -34,10 +37,10 @@ namespace Web.Controllers
             var controller =
                 filterContext.ActionDescriptor.ControllerDescriptor.ControllerName.Replace("Controller", "");
             var userRoles = Roles.GetRolesForUser(User.Identity.Name);
-            var userPermission = permissions.FirstOrDefault(x => 
+            var userPermission = Permissions.FirstOrDefault(x => 
                 x.ActionName == action &&
                 x.ControllerName == controller &&
-                (x.UserNames.Contains(User.Identity.Name) || x.Roles.Intersect(userRoles).Any()));
+                (x.UserNames.Contains(Constants.ANONYMOUS_USER) || x.UserNames.Contains(User.Identity.Name) || x.Roles.Intersect(userRoles).Any()));
 
             if (userPermission == null)
             {
@@ -46,6 +49,22 @@ namespace Web.Controllers
                 var loginUrl = url.Action("Login", "Account", null);
                 filterContext.Result = new RedirectResult(loginUrl);
             }
+        }
+
+        protected string GetPermisionMessage(string action, string controller)
+        {
+            var permission =
+                Permissions.FirstOrDefault(x => x.ActionName == action && x.ControllerName == controller);
+
+            var roleList = "";
+            var userList = "";
+            if (permission.Roles != null) permission.Roles.ForEach(role => roleList += (roleList == "") ? role : "," + role);
+            if (permission.UserNames != null) permission.UserNames.ForEach(userName => userList += (userList == "") ? userName : "," + userName);
+
+            roleList = (roleList == "") ? "none" : roleList;
+            userList = (userList == "") ? "none" : userList;
+
+            return string.Format("To view this page you are logged into one of these roles: {0}, or you are one of these users: {1}", roleList, userList);            
         }
     }
 }

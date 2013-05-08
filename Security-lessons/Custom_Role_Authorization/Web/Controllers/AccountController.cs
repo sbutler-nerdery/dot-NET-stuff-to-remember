@@ -17,8 +17,7 @@ using CustomPermission = Web.ViewModels.CustomPermissionViewModel;
 
 namespace Web.Controllers
 {
-    [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         //
         // GET: /Account/Login
@@ -391,12 +390,12 @@ namespace Web.Controllers
             return View(model);
         }
 
-        public ActionResult EditCustomPermissions(int id)
+        public ActionResult EditCustomPermissions(string c, string a)
         {
             var model = new EditCustomPermissionViewModel
                 {
                     Permission =
-                        SecurityHelper.GetAllControllerPermissions().FirstOrDefault(x => x.CustomPermissionId == id)
+                        SecurityHelper.GetAllControllerPermissions().FirstOrDefault(x => x.ActionName == a && x.ControllerName == c)
                 };
             var urlList = new SelectList(SecurityHelper.GetAllUrls());
             var rolesList = new SelectList(Roles.GetAllRoles().ToList());

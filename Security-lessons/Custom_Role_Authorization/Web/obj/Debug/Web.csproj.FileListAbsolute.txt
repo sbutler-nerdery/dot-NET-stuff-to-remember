@@ -1,4 +1,3 @@
-C:\Development\Personal\Web\dot-NET-stuff-to-remember\Security-lessons\Custom_Role_Authorization\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\Security-lessons\Custom_Role_Authorization\Web\bin\Web.dll
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\Security-lessons\Custom_Role_Authorization\Web\bin\Web.pdb
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\Security-lessons\Custom_Role_Authorization\Web\bin\Antlr3.Runtime.dll

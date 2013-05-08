@@ -1,6 +1,8 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 @section featured {
     <section class="featured">
         <div class="content-wrapper">
@@ -10,11 +12,4 @@
             </hgroup>
         </div>
     </section>
-}
-<h3>Test the post back permissions:</h3>
-@using (Html.BeginForm("Index"))
-{
-    @Html.Label("This is a test form that will submit dummy data.")
-    @Html.Hidden("data", "some data");
-    <input type="submit" value="Submit" />
 }

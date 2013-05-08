@@ -33,5 +33,11 @@
         /// The role name that new users are added to by default
         /// </summary>
         public const string ROLES_VIEWER = "Viewer";
+
+        /* Users */
+        /// <summary>
+        /// The anonymous user name
+        /// </summary>
+        public const string ANONYMOUS_USER = "anonymous";
     }
 }

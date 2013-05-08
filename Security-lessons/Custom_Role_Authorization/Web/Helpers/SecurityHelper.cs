@@ -36,6 +36,31 @@ namespace Web.Helpers
                 var controllerName = crtl.Name.Replace("Controller", "");
                 foreach (var method in methods)
                 {
+                    //Ignore if the method has an anonymous attribute 
+                    var anonymous =
+                        method.CustomAttributes.FirstOrDefault(attr => attr.AttributeType.Name == "AllowAnonymousAttribute");
+                    if (anonymous != null)
+                    {
+                        //Add an anonymous user to the controller and method
+                        var permission = new CustomPermissionViewModel
+                        {
+                            ControllerName = controllerName,
+                            ActionName = method.Name,
+                            UserNames = new List<string>(new[] { Constants.ANONYMOUS_USER }),
+                            Roles = new List<string>()
+                        };
+                        permissions.Add(permission);
+
+                        //Keep a list of all the available URLs
+                        _urlLookupList.Add(new UrlLookupHelper
+                        {
+                            ActionName = permission.ActionName,
+                            ControllerName = permission.ControllerName,
+                            Url = permission.Url
+                        });
+                        continue;
+                    }
+
                     var permissionExists =
                         permissions.FirstOrDefault(
                             x => x.ActionName == method.Name && x.ControllerName == controllerName);
