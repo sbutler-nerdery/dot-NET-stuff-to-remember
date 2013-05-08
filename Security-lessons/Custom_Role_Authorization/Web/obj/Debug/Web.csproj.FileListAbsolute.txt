@@ -46,3 +46,4 @@ C:\Development\Personal\Web\dot-NET-stuff-to-remember\Security-lessons\Custom_Ro
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\Security-lessons\Custom_Role_Authorization\Web\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\Security-lessons\Custom_Role_Authorization\Web\obj\Debug\Web.dll
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\Security-lessons\Custom_Role_Authorization\Web\obj\Debug\Web.pdb
+C:\Development\Personal\Web\dot-NET-stuff-to-remember\Security-lessons\Custom_Role_Authorization\Web\obj\Debug\Web.csprojResolveAssemblyReference.cache
