@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using Web.Controllers;
 using Web.Data;
+using Web.Models;
 using Web.ViewModels;
 
 namespace Web.Helpers
@@ -85,9 +86,39 @@ namespace Web.Helpers
         /// Update the permissions in the database 
         /// </summary>
         /// <param name="permissions">A collection of CustomPermissionViewModel</param>
-        public static void UpdateAllControllerPermissions(IEnumerable<CustomPermissionViewModel> permissions)
+        public static void UpdateSecurityPermission(CustomPermissionViewModel permission)
         {
-            
+            using (var context = new UserRolesContext())
+            {
+                //Get the appropriate action and controller for the updated URL...
+                var lookup = _urlLookupList.FirstOrDefault(x => x.Url == permission.Url);
+
+                var roleList = "";
+                var userList = "";
+                if (permission.Roles != null) permission.Roles.ForEach(role => roleList += (roleList == "") ? role : "," + role);
+                if (permission.UserNames != null) permission.UserNames.ForEach(userName => userList += (userList == "") ? userName : "," + userName);
+
+                var updateMe =
+                    context.Permissions.FirstOrDefault(x => x.CustomPermissionId == permission.CustomPermissionId);
+
+                if (updateMe != null)
+                {
+                    updateMe.Controller = lookup.ControllerName;
+                    updateMe.Action = lookup.ActionName;
+                    updateMe.RoleNames = roleList;
+                    updateMe.UserNames = userList;                    
+                }else
+                {
+                    var addMe = new CustomPermission();
+                    addMe.Action = lookup.ActionName;
+                    addMe.Controller = lookup.ControllerName;
+                    addMe.RoleNames = roleList;
+                    addMe.UserNames = userList;
+                    context.Permissions.Add(addMe);
+                }
+
+                context.SaveChanges();
+            }
         }
 
         /// <summary>

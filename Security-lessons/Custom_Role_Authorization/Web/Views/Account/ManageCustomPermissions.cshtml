@@ -18,14 +18,25 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model.Permissions) {
+@foreach (var item in Model.Permissions)
+{
+    var roles = "";
+    var userNames = "";
+    if (item.Roles != null)
+    {
+        item.Roles.ForEach(role => roles += (roles == "") ? role : ", " + role);
+    }
+    if (item.UserNames != null)
+    {
+        item.UserNames.ForEach(userName => userNames += (userNames == "") ? userName : ", " + userName);
+    }    
     <tr>
         <td>
-            @Html.DisplayFor(m => item.SelectedUrl)
+            @Html.DisplayFor(m => item.Url)
             @Html.HiddenFor(m => item.CustomPermissionId)
         </td>
-        <td>@Html.DisplayFor(m => item.SelectedListBoxRoles)</td>
-        <td>@Html.DisplayFor(m => item.SelectedListBoxUserNames)</td>
+        <td>@roles</td>
+        <td>@userNames</td>
         <td>
             @Html.ActionLink("View", "EditCustomPermissions", new { id=item.CustomPermissionId })
         </td>

@@ -414,19 +414,19 @@ namespace Web.Controllers
             //Set the selections
             model.AllUrls.ToList().ForEach(item =>
             {
-                if (model.Permission.SelectedUrl == item.Text)
+                if (model.Permission.Url == item.Text)
                     item.Selected = true;
             });
 
             model.AllRoles.ToList().ForEach(item =>
             {
-                if (model.Permission.SelectedListBoxRoles.Contains(item.Text))
+                if (model.Permission.Roles.Contains(item.Text))
                     item.Selected = true;
             });
 
             model.AllUsers.ToList().ForEach(item =>
             {
-                if (model.Permission.SelectedListBoxUserNames.Contains(item.Text))
+                if (model.Permission.UserNames.Contains(item.Text))
                     item.Selected = true;
             });
 
@@ -437,7 +437,8 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult EditCustomPermissions(EditCustomPermissionViewModel model)
         {
-            return View();
+            SecurityHelper.UpdateSecurityPermission(model.Permission);
+            return RedirectToAction("ManageCustomPermissions");
         }
 
         #region Helpers

@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit Custom Permissions</h2>
+<h2>Edit Permissions for @Model.Permission.Url</h2>
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
@@ -13,32 +13,23 @@
     <fieldset>
         <legend>CustomPermissionViewModel</legend>
 
-        <div class="editor-field">
-            @Html.HiddenFor(model => model.Permission.CustomPermissionId)
-        </div>
-
-        <div class="editor-label">
-            Url
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.Permission.SelectedUrl, Model.AllUrls)
-        </div>
-
         <div class="editor-label">
             Roles
         </div>
         <div class="editor-field">
-            @Html.ListBoxFor(model => model.Permission.SelectedListBoxRoles, Model.AllRoles)
+            @Html.ListBoxFor(model => model.Permission.Roles, Model.AllRoles)
         </div>
         
         <div class="editor-label">
             User names
         </div>
         <div class="editor-field">
-            @Html.ListBoxFor(model => model.Permission.SelectedListBoxUserNames, Model.AllUsers)
+            @Html.ListBoxFor(model => model.Permission.UserNames, Model.AllUsers)
         </div>
 
         <p>
+            @Html.HiddenFor(model => model.Permission.Url)
+            @Html.HiddenFor(model => model.Permission.CustomPermissionId)            
             <input type="submit" value="Save" />
         </p>
     </fieldset>
