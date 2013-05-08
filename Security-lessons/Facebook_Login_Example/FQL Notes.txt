@@ -1,0 +1,21 @@
+//A list of friends for the current user...
+https://graph.facebook.com/me/friends?access_token=BAAEm6BHiMJQBAG2JXAkVEEQ1ZCkh7UhsD3OsyNkhK8ZBlSEM7Yu1VQy6TbjOHTmTSWwVVAPibEihTSG5YRwT6sdZBWODVZBQdJZAPrWZCbiTldvr9h3PMMf6R4WxdfXBmrJiZBkhMHBZARHwX6EcakYGRZCTYntNIOL91EUHpB2inSxjzhfuaWDfPGgDaQQm5PlaqZCqsjapQsqdAoCtusLqeKzgs4y9tn2zcZD
+
+//Get a user's picture
+https://graph.facebook.com/USERID/picture?access_token=BAAEm6BHiMJQBAG2JXAkVEEQ1ZCkh7UhsD3OsyNkhK8ZBlSEM7Yu1VQy6TbjOHTmTSWwVVAPibEihTSG5YRwT6sdZBWODVZBQdJZAPrWZCbiTldvr9h3PMMf6R4WxdfXBmrJiZBkhMHBZARHwX6EcakYGRZCTYntNIOL91EUHpB2inSxjzhfuaWDfPGgDaQQm5PlaqZCqsjapQsqdAoCtusLqeKzgs4y9tn2zcZD
+
+https://graph.facebook.com/fql?q={"query1":"SELECT+uid2+FROM+friend+WHERE+uid1=me()","query2":"SELECT+name,+url,+pic+FROM+profile+WHERE+id+IN(SELECT+uid2+FROM+#query1)"}&access_token=CAAEm6BHiMJQBAAMyeZBta1ZCODHyjEJhzIEpe16dxoX7NrgbwF4HmzkmMWzDE8YHLaZAfQkWibNZCnxGyPuOVdW0ZAxz4jL5ohNKIZC8s6AmAyobDipu5Ob19OdX9s0W0bY6v9zQbksxfOdXoWvlS3Pxbu5lVUQoQZD
+
+https://graph.facebook.com/fql?q={"friends":"SELECT+uid2+FROM+friend+WHERE+uid1=me()","friends2":"SELECT+name,+url,+ pic,+pic_bigFROM+profile+WHERE+id+IN+(SELECT+uid2+FROM+%23friends)"}&access_token=CAAEm6BHiMJQBAAMyeZBta1ZCODHyjEJhzIEpe16dxoX7NrgbwF4HmzkmMWzDE8YHLaZAfQkWibNZCnxGyPuOVdW0ZAxz4jL5ohNKIZC8s6AmAyobDipu5Ob19OdX9s0W0bY6v9zQbksxfOdXoWvlS3Pxbu5lVUQoQZD
+
+parameters:
+type=small,large
+width=
+height=
+callback=foo //this will return the picture inside of a container object
+
+9211904
+//Examples of how to get different types of pictures...
+http://developers.facebook.com/docs/reference/api/using-pictures/
+
+ColoGirl1!

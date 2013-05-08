@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+            <hgroup class="title">
+                <h1>@ViewBag.Title.</h1>
+                <h4>@Html.Raw(ViewBag.Message)</h4>
+            </hgroup>
+        </div>
+    </section>
+}
+<h3>Test the post back permissions:</h3>
+@using (Html.BeginForm("Index"))
+{
+    @Html.Label("This is a test form that will submit dummy data.")
+    @Html.Hidden("data", "some data");
+    <input type="submit" value="Submit" />
+}

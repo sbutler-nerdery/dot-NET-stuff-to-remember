@@ -1,0 +1,53 @@
+﻿@model Web.ViewModels.ManageCustomPermissionsViewModel
+
+@{
+    ViewBag.Title = "ManageCustomPermissions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var url = string.Format("{0}://{1}", Request.Url.Scheme, Request.Url.Authority);
+}
+
+<h2>ManageCustomPermissions</h2>
+
+
+<table>
+    <tr>
+        <th>
+            Url
+        </th>
+        <th>Roles</th>
+        <th>Users</th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Permissions)
+{
+    if (string.IsNullOrEmpty(item.Url))
+    {
+        continue;
+    }
+    var roles = "";
+    var userNames = "";
+    if (item.Roles != null)
+    {
+        item.Roles.ForEach(role => roles += (roles == "") ? role : ", " + role);
+    }
+    if (item.UserNames != null)
+    {
+        item.UserNames.ForEach(userName => userNames += (userNames == "") ? userName : ", " + userName);
+    }    
+    <tr>
+        <td>
+            @url@Html.DisplayFor(m => item.Url)
+            @Html.HiddenFor(m => item.CustomPermissionId)
+        </td>
+        <td>@roles</td>
+        <td>@userNames</td>
+        <td>
+            @Html.ActionLink("View","EditCustomPermissions","Account", new { c = item.ControllerName, a = item.ActionName}, null)
+        </td>
+    </tr>
+}
+
+</table>  
+
+

@@ -1,0 +1,30 @@
+﻿@model Web.ViewModels.ManageNonPasswordViewModel
+
+<p>
+    Update your first name, last name and phone number.
+</p>
+
+@using (Html.BeginForm("UpdateUserInfo", "Account")) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>Set Password Form</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.FirstName)
+                @Html.TextBoxFor(m => m.FirstName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.LastName)
+                @Html.TextBoxFor(m => m.LastName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.PhoneNumber)
+                @Html.TextBoxFor(m => m.PhoneNumber)
+                @Html.HiddenFor(m => m.UserId)
+            </li>
+        </ol>
+        <input type="submit" value="Update Info" />
+    </fieldset>
+}

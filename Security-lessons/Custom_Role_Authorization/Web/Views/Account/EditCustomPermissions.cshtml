@@ -1,0 +1,49 @@
+﻿@model Web.ViewModels.EditCustomPermissionViewModel
+
+@{
+    ViewBag.Title = "EditCustomPermissions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section scripts{
+    @Scripts.Render("~/bundles/select2")
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //see http://ivaynberg.github.io/select2/ for tons and tons more configuration options!
+            $('.fancy-list-box').select2();
+        });
+    </script>
+}
+
+<h2>Edit Permissions for @Model.Permission.Url</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Edit Custom Permissions</legend>
+
+        <div class="editor-label">
+            Roles
+        </div>
+        <div class="editor-field">
+            @Html.ListBoxFor(model => model.Permission.Roles, Model.AllRoles, new {name="Permission.Roles", @style="width:300px;", @class="fancy-list-box"})
+        </div>
+        
+        <div class="editor-label">
+            User names
+        </div>
+        <div class="editor-field">
+            @Html.ListBoxFor(model => model.Permission.UserNames, Model.AllUsers, new {name="Permission.UserNames",@style="width:300px;", @class="fancy-list-box"})
+        </div>
+
+        <p>
+            @Html.HiddenFor(model => model.Permission.Url)
+            @Html.HiddenFor(model => model.Permission.CustomPermissionId)            
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ManageCustomPermissions")
+</div>

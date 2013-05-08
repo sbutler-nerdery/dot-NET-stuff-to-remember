@@ -19,3 +19,7 @@ Security-lessons/Simple_Login_Example/Web/bin/
 HTML-form-lessons/HTML_Form_Basics/Web/bin/
 HTML-form-lessons/HTML_Form_Basics/Web/obj/Debug/
 Unit-testing-lessons/Fake_It_Easy_With_Repositories/TestResults/
+EF-lessons/Complex_Relationships/TestResults/sbutler_SBUTLER-WIN7 2013-05-06 09_57_28/Out/
+*.dat
+*.MDF
+*.ldf
