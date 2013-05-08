@@ -9,7 +9,6 @@ namespace Web.Controllers
 {
     public class HomeController : BaseController
     {
-        [Authorize]
         public ActionResult Index()
         {
             ViewBag.Message = "You must be logged in as a regular user!";
@@ -17,7 +16,14 @@ namespace Web.Controllers
             return View();
         }
 
-        [Authorize]
+        [HttpPost]
+        public ActionResult Index(string data)
+        {
+            ViewBag.Message = "Post back!";
+
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "You must be logged in as an admin!";
@@ -25,7 +31,6 @@ namespace Web.Controllers
             return View();
         }
 
-        [Authorize]
         public ActionResult Contact()
         {
             ViewBag.Message = "You must be logged in as an admin!";

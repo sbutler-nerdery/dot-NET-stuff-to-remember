@@ -8,15 +8,16 @@ using System.Web.Security;
 using DotNetOpenAuth.AspNet;
 using Microsoft.Web.WebPages.OAuth;
 using Web.Data;
+using Web.Helpers;
 using Web.ViewModels;
 using WebMatrix.WebData;
 using Web.Filters;
 using Web.Models;
+using CustomPermission = Web.ViewModels.CustomPermissionViewModel;
 
 namespace Web.Controllers
 {
     [Authorize]
-    [InitializeSimpleMembership]
     public class AccountController : Controller
     {
         //
@@ -35,7 +36,7 @@ namespace Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Login(LoginModel model, string returnUrl)
+        public ActionResult Login(LoginViewModel model, string returnUrl)
         {
             if (ModelState.IsValid && WebSecurity.Login(model.UserName, model.Password, persistCookie: model.RememberMe))
             {
@@ -74,7 +75,7 @@ namespace Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterModel model)
+        public ActionResult Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -144,7 +145,7 @@ namespace Web.Controllers
 
             var userId = WebSecurity.GetUserId(User.Identity.Name);
             bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(userId);
-            var model = new LocalPasswordModel();
+            var model = new LocalPasswordViewModel();
 
             //Populate the user info stuff
             if (hasLocalAccount)
@@ -152,7 +153,7 @@ namespace Web.Controllers
                 using (var context = new UserRolesContext())
                 {
                     var user = context.UserProfiles.FirstOrDefault(x => x.UserId == userId);
-                    model.UserInfo = new ManageNonPasswordModel
+                    model.UserInfo = new ManageNonPasswordViewModel
                         {
                             UserId = user.UserId, 
                             FirstName = user.FirstName, 
@@ -171,7 +172,7 @@ namespace Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Manage(LocalPasswordModel model)
+        public ActionResult Manage(LocalPasswordViewModel model)
         {
             bool hasLocalAccount = OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
             ViewBag.HasLocalPassword = hasLocalAccount;
@@ -231,7 +232,7 @@ namespace Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult UpdateUserInfo(ManageNonPasswordModel model)
+        public ActionResult UpdateUserInfo(ManageNonPasswordViewModel model)
         {
             bool userExists = false;
             if (ModelState.IsValid)
@@ -295,7 +296,7 @@ namespace Web.Controllers
                 string loginData = OAuthWebSecurity.SerializeProviderUserId(result.Provider, result.ProviderUserId);
                 ViewBag.ProviderDisplayName = OAuthWebSecurity.GetOAuthClientData(result.Provider).DisplayName;
                 ViewBag.ReturnUrl = returnUrl;
-                return View("ExternalLoginConfirmation", new RegisterExternalLoginModel { UserName = result.UserName, ExternalLoginData = loginData });
+                return View("ExternalLoginConfirmation", new RegisterExternalLoginViewModel { UserName = result.UserName, ExternalLoginData = loginData });
             }
         }
 
@@ -305,7 +306,7 @@ namespace Web.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult ExternalLoginConfirmation(RegisterExternalLoginModel model, string returnUrl)
+        public ActionResult ExternalLoginConfirmation(RegisterExternalLoginViewModel model, string returnUrl)
         {
             string provider = null;
             string providerUserId = null;
@@ -366,12 +367,12 @@ namespace Web.Controllers
         public ActionResult RemoveExternalLogins()
         {
             ICollection<OAuthAccount> accounts = OAuthWebSecurity.GetAccountsFromUserName(User.Identity.Name);
-            List<ExternalLogin> externalLogins = new List<ExternalLogin>();
+            List<ExternalLoginViewModel> externalLogins = new List<ExternalLoginViewModel>();
             foreach (OAuthAccount account in accounts)
             {
                 AuthenticationClientData clientData = OAuthWebSecurity.GetOAuthClientData(account.Provider);
 
-                externalLogins.Add(new ExternalLogin
+                externalLogins.Add(new ExternalLoginViewModel
                 {
                     Provider = account.Provider,
                     ProviderDisplayName = clientData.DisplayName,
@@ -381,6 +382,17 @@ namespace Web.Controllers
 
             ViewBag.ShowRemoveButton = externalLogins.Count > 1 || OAuthWebSecurity.HasLocalAccount(WebSecurity.GetUserId(User.Identity.Name));
             return PartialView("_RemoveExternalLoginsPartial", externalLogins);
+        }
+
+        public ActionResult ManageCustomPermissions()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ManageCustomPermissions(List<CustomPermission> model)
+        {
+            return View();
         }
 
         #region Helpers
