@@ -16,7 +16,7 @@ namespace Web.Helpers
     /// </summary>
     public class SecurityHelper
     {
-        private static List<UrlLookupHelper> _urlLookupList = new List<UrlLookupHelper>();
+        private static readonly List<UrlLookupHelper> _urlLookupList = new List<UrlLookupHelper>();
 
         /// <summary>
         /// Get a collection of permissions for each controller on the site that inherit from base controller.
@@ -110,7 +110,7 @@ namespace Web.Helpers
         /// <summary>
         /// Update the permissions in the database 
         /// </summary>
-        /// <param name="permissions">A collection of CustomPermissionViewModel</param>
+        /// <param name="permission">A CustomPermissionViewModel</param>
         public static void UpdateSecurityPermission(CustomPermissionViewModel permission)
         {
             using (var context = new UserRolesContext())

@@ -64,7 +64,7 @@ namespace Web.Controllers
             roleList = (roleList == "") ? "none" : roleList;
             userList = (userList == "") ? "none" : userList;
 
-            return string.Format("To view this page you are logged into one of these roles: {0}, or you are one of these users: {1}", roleList, userList);            
+            return string.Format("To view this page you are logged into one of these roles: (<u>{0}</u>), or you are one of these users: (<u>{1}</u>)", roleList, userList);            
         }
     }
 }
