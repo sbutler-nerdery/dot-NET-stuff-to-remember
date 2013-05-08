@@ -386,11 +386,56 @@ namespace Web.Controllers
 
         public ActionResult ManageCustomPermissions()
         {
-            return View();
+            var model = new ManageCustomPermissionsViewModel();
+            model.Permissions = SecurityHelper.GetAllControllerPermissions().ToList();
+            return View(model);
+        }
+
+        public ActionResult EditCustomPermissions(int id)
+        {
+            var model = new EditCustomPermissionViewModel
+                {
+                    Permission =
+                        SecurityHelper.GetAllControllerPermissions().FirstOrDefault(x => x.CustomPermissionId == id)
+                };
+            var urlList = new SelectList(SecurityHelper.GetAllUrls());
+            var rolesList = new SelectList(Roles.GetAllRoles().ToList());
+            SelectList userNameList = null;
+
+            using (var context = new UserRolesContext())
+            {
+                userNameList = new SelectList(context.UserProfiles.Select(user => user.UserName).ToList());
+            }
+
+            model.AllUrls = urlList;
+            model.AllRoles = rolesList;
+            model.AllUsers = userNameList;
+
+            //Set the selections
+            model.AllUrls.ToList().ForEach(item =>
+            {
+                if (model.Permission.SelectedUrl == item.Text)
+                    item.Selected = true;
+            });
+
+            model.AllRoles.ToList().ForEach(item =>
+            {
+                if (model.Permission.SelectedListBoxRoles.Contains(item.Text))
+                    item.Selected = true;
+            });
+
+            model.AllUsers.ToList().ForEach(item =>
+            {
+                if (model.Permission.SelectedListBoxUserNames.Contains(item.Text))
+                    item.Selected = true;
+            });
+
+            
+            return View(model);
         }
 
         [HttpPost]
-        public ActionResult ManageCustomPermissions(List<CustomPermission> model)
+        public ActionResult EditCustomPermissions(EditCustomPermissionViewModel model)
         {
             return View();
         }

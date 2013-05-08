@@ -23,6 +23,7 @@ namespace Web.Helpers
         /// <returns></returns>
         public static IEnumerable<CustomPermissionViewModel> GetAllControllerPermissions()
         {
+            _urlLookupList.Clear();
             var permissions = new List<CustomPermissionViewModel>();
             var assembly = Assembly.GetCallingAssembly();
             Type baseType = typeof(BaseController);
@@ -57,6 +58,7 @@ namespace Web.Helpers
                             {
                                 permission.UserNames = (row.UserNames != null) ? row.UserNames.Split(new[] { ',' }).ToList() : new List<string>();
                                 permission.Roles = (row.RoleNames != null) ? row.RoleNames.Split(new[] { ',' }).ToList() : new List<string>();
+                                permission.CustomPermissionId = row.CustomPermissionId;
                             }
                         }
 
@@ -86,6 +88,15 @@ namespace Web.Helpers
         public static void UpdateAllControllerPermissions(IEnumerable<CustomPermissionViewModel> permissions)
         {
             
+        }
+
+        /// <summary>
+        /// Get a list of all the securable URLs on the site.
+        /// </summary>
+        /// <returns></returns>
+        public static List<string> GetAllUrls()
+        {
+            return _urlLookupList.Select(x => x.Url).ToList();
         }
 
         /// <summary>

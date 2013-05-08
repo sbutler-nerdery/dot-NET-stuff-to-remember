@@ -7,46 +7,31 @@
 
 <h2>ManageCustomPermissions</h2>
 
-@using (Html.BeginForm("ManageCustomPermissions","Account", "POST"))
-{
-    <table>
-        <tr>
-            <th>
-                Url
-            </th>
-            <th>Roles</th>
-            <th>Users</th>
-            <th></th>
-        </tr>
 
-    @foreach (var item in Model.Permissions) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Url)
-                @Html.DropDownListFor(m => item.SelectedUrl, Model.AllUrls)
-                @Html.HiddenFor(m => item.CustomPermissionId)
-            </td>
-            <td>@Html.ListBoxFor(m => item.SelectedListBoxRoles, Model.AllRoles)</td>
-            <td>@Html.ListBoxFor(m => item.SelectedListBoxUserNames, Model.AllUsers)</td>
-            <td>
-                @Html.ActionLink("Delete", "Delete", new { id=item.CustomPermissionId })
-            </td>
-        </tr>
-    }
+<table>
+    <tr>
+        <th>
+            Url
+        </th>
+        <th>Roles</th>
+        <th>Users</th>
+        <th></th>
+    </tr>
 
-    </table>  
-    
-    <h2>Add new permission</h2>
-        <ul>
-            <li>
-                @Html.DisplayFor(modelItem => Model.AddPermission.Url)
-                @Html.DropDownListFor(m => Model.AddPermission.SelectedUrl, Model.AllUrls)
-                @Html.HiddenFor(m => Model.AddPermission.CustomPermissionId)
-            </li>
-            <li>@Html.ListBoxFor(m => Model.AddPermission.SelectedListBoxRoles, Model.AllRoles)</li>
-            <li>@Html.ListBoxFor(m => Model.AddPermission.SelectedListBoxUserNames, Model.AllUsers)</li>
-        </ul>    
-    
-    <button type="submit">Save</button>
+@foreach (var item in Model.Permissions) {
+    <tr>
+        <td>
+            @Html.DisplayFor(m => item.SelectedUrl)
+            @Html.HiddenFor(m => item.CustomPermissionId)
+        </td>
+        <td>@Html.DisplayFor(m => item.SelectedListBoxRoles)</td>
+        <td>@Html.DisplayFor(m => item.SelectedListBoxUserNames)</td>
+        <td>
+            @Html.ActionLink("View", "EditCustomPermissions", new { id=item.CustomPermissionId })
+        </td>
+    </tr>
 }
+
+</table>  
+
 

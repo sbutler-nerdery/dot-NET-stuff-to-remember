@@ -17,21 +17,5 @@ namespace Web.ViewModels
         /// Get or set the list of security permissions for this view model.
         /// </summary>
         public List<CustomPermissionViewModel> Permissions { get; set; }
-        /// <summary>
-        /// Get or set a list of all urls
-        /// </summary>
-        public IEnumerable<SelectListItem> AllUrls { get; set; }
-        /// <summary>
-        /// Get or set a list of all user roles in the system
-        /// </summary>
-        public IEnumerable<SelectListItem> AllRoles { get; set; }
-        /// <summary>
-        /// Get or set a list of all user names in the system
-        /// </summary>
-        public IEnumerable<SelectListItem> AllUsers { get; set; }
-        /// <summary>
-        /// Get or set the new permissions to be added
-        /// </summary>
-        public CustomPermissionViewModel AddPermission { get; set; }
     }
 }

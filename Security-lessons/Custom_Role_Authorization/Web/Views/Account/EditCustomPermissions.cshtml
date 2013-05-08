@@ -1,0 +1,53 @@
+﻿@model Web.ViewModels.EditCustomPermissionViewModel
+
+@{
+    ViewBag.Title = "EditCustomPermissions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Edit Custom Permissions</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>CustomPermissionViewModel</legend>
+
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.Permission.CustomPermissionId)
+        </div>
+
+        <div class="editor-label">
+            Url
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.Permission.SelectedUrl, Model.AllUrls)
+        </div>
+
+        <div class="editor-label">
+            Roles
+        </div>
+        <div class="editor-field">
+            @Html.ListBoxFor(model => model.Permission.SelectedListBoxRoles, Model.AllRoles)
+        </div>
+        
+        <div class="editor-label">
+            User names
+        </div>
+        <div class="editor-field">
+            @Html.ListBoxFor(model => model.Permission.SelectedListBoxUserNames, Model.AllUsers)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ManageCustomPermissions")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

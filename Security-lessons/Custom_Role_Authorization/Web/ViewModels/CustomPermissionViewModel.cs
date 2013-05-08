@@ -9,9 +9,9 @@ namespace Web.ViewModels
     /// </summary>
     public class CustomPermissionViewModel
     {
-        private List<SelectListItem> _roleListItems;
-        private List<SelectListItem> _userListItems;
-        private SelectListItem _selectedUrl;
+        private List<string> _roleListItems;
+        private List<string> _userListItems;
+        private string _selectedUrl;
 
         /// <summary>
         /// Get or set the custom permissions id
@@ -40,52 +40,52 @@ namespace Web.ViewModels
         /// <summary>
         /// Get or set the seleced Url for this permission
         /// </summary>
-        public SelectListItem SelectedUrl {
+        public string SelectedUrl {
             get
             {
-                _selectedUrl = new SelectListItem{Selected = true, Text = Url, Value = Url};
+                _selectedUrl = Url;
                 return _selectedUrl;
             }
             set
             {
                 _selectedUrl = value;
-                Url = _selectedUrl.Value;
+                Url = _selectedUrl;
             }
         }
-        public List<SelectListItem> SelectedListBoxRoles {
+        public List<string> SelectedListBoxRoles {
             get
             {
                 //Build list items from the Roles propery
-                _roleListItems = new List<SelectListItem>();
+                _roleListItems = new List<string>();
 
-                Roles.ForEach(role => _roleListItems.Add(new SelectListItem { Selected = true, Text = role, Value = role }));
+                Roles.ForEach(role => _roleListItems.Add(role));
                 return _roleListItems;
             }
             set
             {
                 Roles.Clear();
                 _roleListItems = value;
-                _roleListItems.ForEach(lisItem => Roles.Add(lisItem.Value));                
+                _roleListItems.ForEach(lisItem => Roles.Add(lisItem));                
             }
         }
         /// <summary>
         /// Get or set the list of Username SelectListItems used by the MVC listbox control
         /// </summary>
-        public List<SelectListItem> SelectedListBoxUserNames
+        public List<string> SelectedListBoxUserNames
         {
             get
             {
                 //Build list items from the UserNames propery
-                _userListItems = new List<SelectListItem>();
+                _userListItems = new List<string>();
 
-                UserNames.ForEach(role => _userListItems.Add(new SelectListItem { Selected = true, Text = role, Value = role }));
+                UserNames.ForEach(userName => _userListItems.Add(userName));
                 return _userListItems;
             }
             set
             {
                 UserNames.Clear();
                 _userListItems = value;
-                _userListItems.ForEach(lisItem => UserNames.Add(lisItem.Value));
+                _userListItems.ForEach(lisItem => UserNames.Add(lisItem));
             }
         }
     }
