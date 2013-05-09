@@ -100,3 +100,37 @@ C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\b
 C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\obj\Debug\MvcMobileStarter.csprojResolveAssemblyReference.cache
 C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\obj\Debug\MvcMobile.dll
 C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\obj\Debug\MvcMobile.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\MvcMobile.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\MvcMobile.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\Antlr3.Runtime.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\EntityFramework.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\Microsoft.Web.Infrastructure.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\Newtonsoft.Json.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Net.Http.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Net.Http.Formatting.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Net.Http.WebRequest.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.Http.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.Http.WebHost.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.Mvc.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.Optimization.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.Providers.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.Razor.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.WebPages.Deployment.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.WebPages.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.WebPages.Razor.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\WebGrease.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.Razor.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\EntityFramework.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\Newtonsoft.Json.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Net.Http.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Net.Http.Formatting.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Net.Http.WebRequest.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.Http.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.Http.WebHost.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.Mvc.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.WebPages.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.WebPages.Deployment.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\bin\System.Web.WebPages.Razor.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\obj\Debug\MvcMobileStarter.csprojResolveAssemblyReference.cache
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\obj\Debug\MvcMobile.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Mobile-lessons\MVC_Mobile_Starter\MvcMobile\obj\Debug\MvcMobile.pdb
