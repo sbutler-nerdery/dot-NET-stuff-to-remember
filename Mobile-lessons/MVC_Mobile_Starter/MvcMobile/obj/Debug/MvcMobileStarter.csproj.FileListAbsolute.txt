@@ -1,0 +1,102 @@
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\MvcMobile.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\MvcMobile.pdb
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\Antlr3.Runtime.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\EntityFramework.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\Microsoft.Web.Infrastructure.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\Newtonsoft.Json.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Net.Http.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Net.Http.Formatting.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Net.Http.WebRequest.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.Http.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.Http.WebHost.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.Mvc.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.Optimization.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.Providers.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.Razor.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.WebPages.Deployment.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.WebPages.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.WebPages.Razor.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\WebGrease.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\EntityFramework.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\Newtonsoft.Json.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Net.Http.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Net.Http.Formatting.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Net.Http.WebRequest.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.Http.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.Http.WebHost.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.Mvc.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.Razor.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.WebPages.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.WebPages.Deployment.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\bin\System.Web.WebPages.Razor.xml
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\obj\Debug\MvcMobileStarter.csprojResolveAssemblyReference.cache
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\obj\Debug\MvcMobile.dll
+C:\Dropbox\MVC4\RTMmobile\code\MvcMobileRTM\MvcMobile\MvcMobile\obj\Debug\MvcMobile.pdb
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\MvcMobile.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\MvcMobile.pdb
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\Antlr3.Runtime.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\EntityFramework.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\Newtonsoft.Json.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Net.Http.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Net.Http.Formatting.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Net.Http.WebRequest.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.Http.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.Http.WebHost.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.Mvc.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.Optimization.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.Providers.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.Razor.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.WebPages.Deployment.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.WebPages.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.WebPages.Razor.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\WebGrease.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\EntityFramework.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\Newtonsoft.Json.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Net.Http.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Net.Http.Formatting.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Net.Http.WebRequest.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.Http.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.Http.WebHost.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.Mvc.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.Razor.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.WebPages.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.WebPages.Deployment.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\bin\System.Web.WebPages.Razor.xml
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\obj\Debug\MvcMobileStarter.csprojResolveAssemblyReference.cache
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\obj\Debug\MvcMobile.dll
+C:\Users\sbutler\Downloads\MvcMobileRTMStarter\MvcMobile\MvcMobile\obj\Debug\MvcMobile.pdb
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\MvcMobile.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\MvcMobile.pdb
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\Antlr3.Runtime.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\EntityFramework.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\Newtonsoft.Json.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Net.Http.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Net.Http.Formatting.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Net.Http.WebRequest.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.Http.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.Http.WebHost.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.Mvc.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.Optimization.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.Providers.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.Razor.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.WebPages.Deployment.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.WebPages.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.WebPages.Razor.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\WebGrease.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.Razor.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\EntityFramework.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\Newtonsoft.Json.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Net.Http.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Net.Http.Formatting.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Net.Http.WebRequest.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.Http.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.Http.WebHost.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.Mvc.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.WebPages.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.WebPages.Deployment.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\bin\System.Web.WebPages.Razor.xml
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\obj\Debug\MvcMobileStarter.csprojResolveAssemblyReference.cache
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\obj\Debug\MvcMobile.dll
+C:\Users\sbutler\Documents\Visual Studio 2012\Projects\POC\MvcMobile\MvcMobile\obj\Debug\MvcMobile.pdb
