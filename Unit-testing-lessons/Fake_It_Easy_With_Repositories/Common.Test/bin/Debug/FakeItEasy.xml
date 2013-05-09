@@ -433,6 +433,177 @@
             Gets a constraint that considers any value of an argument as valid.
             </summary>
         </member>
+        <member name="T:FakeItEasy.ExceptionMessages">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.ApplicatorNotSetExceptionMessage">
+            <summary>
+              Looks up a localized string similar to The Apply method of the ExpressionInterceptor may no be called before the Applicator property has been set..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.ArgumentNameDoesNotExist">
+            <summary>
+              Looks up a localized string similar to The specified argument name does not exist in the ArgumentList..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.ArgumentsForConstructorOnInterfaceType">
+            <summary>
+              Looks up a localized string similar to Arguments for constructor was specified when generating proxy of interface type..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.ArgumentValidationDefaultMessage">
+            <summary>
+              Looks up a localized string similar to An argument validation was not configured correctly..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.CalledTooFewTimesMessage">
+            <summary>
+              Looks up a localized string similar to The method &apos;{0}&apos; was called too few times, expected #{1} times but was called #{2} times..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.CalledTooManyTimesMessage">
+            <summary>
+              Looks up a localized string similar to The method &apos;{0}&apos; was called too many times, expected #{1} times but was called #{2} times..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.CanNotGenerateFakeMessage">
+             <summary>
+               Looks up a localized string similar to Can not create fake of the type &apos;{0}&apos;, it&apos;s not registered in the current container and the current IProxyGenerator can not generate the fake.
+            
+            The following constructors failed:
+            {1}.
+             </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.ConfiguringNonFakeObjectExceptionMessage">
+            <summary>
+              Looks up a localized string similar to Error when accessing FakeObject, the specified argument is of the type &apos;{0}&apos; which is not faked..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.CreatingExpressionCallMatcherWithNonMethodOrPropertyExpression">
+            <summary>
+              Looks up a localized string similar to An ExpressionCallMatcher can only be created for expressions that represents a method call or a property getter..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.FailedToGenerateFakeWithArgumentsForConstructorPattern">
+             <summary>
+               Looks up a localized string similar to 
+            
+              The current proxy generator failed to create a proxy with the specified arguments for the constructor:
+            
+              Reason for failure:
+                - {0}
+              
+            .
+             </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.FailedToGenerateProxyPattern">
+             <summary>
+               Looks up a localized string similar to FakeItEasy failed to create fake object of type &quot;{0}&quot;.
+            
+            1. The type is not registered in the current IFakeObjectContainer.
+            2. The current IProxyGenerator failed to generate a proxy for the following reason:
+            
+            {1}.
+             </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.FakeCreationExceptionDefaultMessage">
+            <summary>
+              Looks up a localized string similar to Unable to create fake object..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.FakingNonAbstractClassWithArgumentsForConstructor">
+            <summary>
+              Looks up a localized string similar to Only abstract classes can be faked using the A.Fake-method that takes an enumerable of objects as arguments for constructor, use the overload that takes an expression instead..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.MemberAccessorNotCorrectExpressionType">
+            <summary>
+              Looks up a localized string similar to The member accessor expression must be a lambda expression with a MethodCallExpression or MemberAccessExpression as its body..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.MemberCanNotBeIntercepted">
+            <summary>
+              Looks up a localized string similar to The specified method can not be configured since it can not be intercepted by the current IProxyGenerator..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.MethodMissmatchWhenPlayingBackRecording">
+            <summary>
+              Looks up a localized string similar to The method of the call did not match the method of the recorded call, the recorded sequence is no longer valid..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.NoConstructorMatchingArguments">
+            <summary>
+              Looks up a localized string similar to No constructor matching the specified arguments was found on the type {0}..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.NoDefaultConstructorMessage">
+            <summary>
+              Looks up a localized string similar to Can not generate fake object for the class since no default constructor was found, specify a constructor call..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.NoMoreRecordedCalls">
+            <summary>
+              Looks up a localized string similar to All the recorded calls has been applied, the recorded sequence is no longer valid..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.NonConstructorExpressionMessage">
+            <summary>
+              Looks up a localized string similar to Only expression of the type ExpressionType.New (constructor calls) are accepted..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.NowCalledDirectly">
+            <summary>
+              Looks up a localized string similar to The Now-method on the event raise is not meant to be called directly, only use it to register to an event on a fake object that you want to be raised..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.NumberOfOutAndRefParametersDoesNotMatchCall">
+            <summary>
+              Looks up a localized string similar to The number of values for out and ref parameters specified does not match the number of out and ref parameters in the call..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.OrderedAssertionsAlreadyOpen">
+            <summary>
+              Looks up a localized string similar to A scope for ordered assertions is already opened, close that scope before opening another one..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.SpecifiedCallIsNotToFakedObject">
+            <summary>
+              Looks up a localized string similar to The specified call is not made on a fake object..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.TypeCanNotBeProxied">
+            <summary>
+              Looks up a localized string similar to The current fake proxy generator can not create proxies of the type {0}..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.UnableToCreateDummyPattern">
+            <summary>
+              Looks up a localized string similar to FakeItEasy was unable to create dummy of type &quot;{0}&quot;, register it in the current IFakeObjectContainer to enable this..
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.WasCalledWrongNumberOfTimes">
+            <summary>
+              Looks up a localized string similar to Expected to find call {0} the number of times specified by the predicate &apos;{1}&apos; but found it {2} times among the calls:.
+            </summary>
+        </member>
+        <member name="P:FakeItEasy.ExceptionMessages.WrongNumberOfArgumentNamesMessage">
+            <summary>
+              Looks up a localized string similar to The number of argument names does not match the number of arguments..
+            </summary>
+        </member>
         <member name="T:FakeItEasy.Raise`1">
             <summary>
             A class exposing an event handler to attach to an event of a faked object
@@ -1319,14 +1490,14 @@
             Called when the interception begins but before any call rules
             has been applied.
             </summary>
-            <param name="call">The intercepted call.</param>
+            <param name="interceptedCall">The intercepted call.</param>
         </member>
         <member name="M:FakeItEasy.Core.IInterceptionListener.OnAfterCallIntercepted(FakeItEasy.Core.ICompletedFakeObjectCall,FakeItEasy.Core.IFakeObjectCallRule)">
             <summary>
             Called when the interception has been completed and rules has been
             applied.
             </summary>
-            <param name="call">The intercepted call.</param>
+            <param name="interceptedCall">The intercepted call.</param>
             <param name="ruleThatWasApplied">The rule that was applied to the call.</param>
         </member>
         <member name="T:FakeItEasy.Creation.IProxyGenerator">
@@ -1457,22 +1628,6 @@
             </summary>
             <param name="typeOfFake">The type the fake object represents.</param>
             <param name="fakeObject">The fake object to configure.</param>
-        </member>
-        <member name="M:FakeItEasy.Core.OrderedFakeAsserter.#ctor(System.Collections.Generic.IEnumerable{FakeItEasy.Core.IFakeObjectCall},FakeItEasy.Core.CallWriter)">
-            <summary>
-            Initializes a new instance of the <see cref="T:FakeItEasy.Core.OrderedFakeAsserter"/> class.
-            </summary>
-            <param name="calls">The calls.</param>
-            <param name="callWriter">The call writer.</param>
-        </member>
-        <member name="M:FakeItEasy.Core.OrderedFakeAsserter.AssertWasCalled(System.Func{FakeItEasy.Core.IFakeObjectCall,System.Boolean},System.String,System.Func{System.Int32,System.Boolean},System.String)">
-            <summary>
-            Asserts the was called.
-            </summary>
-            <param name="callPredicate">The call predicate.</param>
-            <param name="callDescription">The call description.</param>
-            <param name="repeatPredicate">The repeat predicate.</param>
-            <param name="repeatDescription">The repeat description.</param>
         </member>
         <member name="T:FakeItEasy.Core.WrappedObjectRule">
             <summary>
@@ -2079,12 +2234,6 @@
             Specifies twice as the repeat.
             </summary>
         </member>
-        <member name="M:FakeItEasy.Logger.Debug(System.Func{System.String})">
-            <summary>
-            Writes the specified message to the logger.
-            </summary>
-            <param name="message">The message to write.</param>
-        </member>
         <member name="T:FakeItEasy.OrderedAssertion">
             <summary>
             Provides functionality for making ordered assertions on fakes.
@@ -2355,173 +2504,6 @@
             <param name="descriptionWriter">An action that writes a description of the constraint
             to the output.</param>
             <returns>A dummy argument value.</returns>
-        </member>
-        <member name="T:FakeItEasy.ExceptionMessages">
-            <summary>
-              A strongly-typed resource class, for looking up localized strings, etc.
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.ResourceManager">
-            <summary>
-              Returns the cached ResourceManager instance used by this class.
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.Culture">
-            <summary>
-              Overrides the current thread's CurrentUICulture property for all
-              resource lookups using this strongly typed resource class.
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.ApplicatorNotSetExceptionMessage">
-            <summary>
-              Looks up a localized string similar to The Apply method of the ExpressionInterceptor may no be called before the Applicator property has been set..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.ArgumentNameDoesNotExist">
-            <summary>
-              Looks up a localized string similar to The specified argument name does not exist in the ArgumentList..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.ArgumentsForConstructorOnInterfaceType">
-            <summary>
-              Looks up a localized string similar to Arguments for constructor was specified when generating proxy of interface type..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.ArgumentValidationDefaultMessage">
-            <summary>
-              Looks up a localized string similar to An argument validation was not configured correctly..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.CalledTooFewTimesMessage">
-            <summary>
-              Looks up a localized string similar to The method &apos;{0}&apos; was called too few times, expected #{1} times but was called #{2} times..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.CalledTooManyTimesMessage">
-            <summary>
-              Looks up a localized string similar to The method &apos;{0}&apos; was called too many times, expected #{1} times but was called #{2} times..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.CanNotGenerateFakeMessage">
-             <summary>
-               Looks up a localized string similar to Can not create fake of the type &apos;{0}&apos;, it&apos;s not registered in the current container and the current IProxyGenerator can not generate the fake.
-            
-            The following constructors failed:
-            {1}.
-             </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.ConfiguringNonFakeObjectExceptionMessage">
-            <summary>
-              Looks up a localized string similar to Error when accessing FakeObject, the specified argument is of the type &apos;{0}&apos; which is not faked..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.CreatingExpressionCallMatcherWithNonMethodOrPropertyExpression">
-            <summary>
-              Looks up a localized string similar to An ExpressionCallMatcher can only be created for expressions that represents a method call or a property getter..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.FailedToGenerateFakeWithArgumentsForConstructorPattern">
-             <summary>
-               Looks up a localized string similar to The current proxy generator failed to create a proxy with the specified arguments for the constructor:
-            
-              Reason for failure:
-                - {0}.
-             </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.FailedToGenerateProxyPattern">
-             <summary>
-               Looks up a localized string similar to FakeItEasy failed to create fake object of type &quot;{0}&quot;.
-            
-            1. The type is not registered in the current IFakeObjectContainer.
-            2. The current IProxyGenerator failed to generate a proxy for the following reason:
-            
-            {1}.
-             </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.FakeCreationExceptionDefaultMessage">
-            <summary>
-              Looks up a localized string similar to Unable to create fake object..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.FakingNonAbstractClassWithArgumentsForConstructor">
-            <summary>
-              Looks up a localized string similar to Only abstract classes can be faked using the A.Fake-method that takes an enumerable of objects as arguments for constructor, use the overload that takes an expression instead..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.MemberAccessorNotCorrectExpressionType">
-            <summary>
-              Looks up a localized string similar to The member accessor expression must be a lambda expression with a MethodCallExpression or MemberAccessExpression as its body..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.MemberCanNotBeIntercepted">
-            <summary>
-              Looks up a localized string similar to The specified method can not be configured since it can not be intercepted by the current IProxyGenerator..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.MethodMissmatchWhenPlayingBackRecording">
-            <summary>
-              Looks up a localized string similar to The method of the call did not match the method of the recorded call, the recorded sequence is no longer valid..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.NoConstructorMatchingArguments">
-            <summary>
-              Looks up a localized string similar to No constructor matching the specified arguments was found on the type {0}..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.NoDefaultConstructorMessage">
-            <summary>
-              Looks up a localized string similar to Can not generate fake object for the class since no default constructor was found, specify a constructor call..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.NoMoreRecordedCalls">
-            <summary>
-              Looks up a localized string similar to All the recorded calls has been applied, the recorded sequence is no longer valid..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.NonConstructorExpressionMessage">
-            <summary>
-              Looks up a localized string similar to Only expression of the type ExpressionType.New (constructor calls) are accepted..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.NowCalledDirectly">
-            <summary>
-              Looks up a localized string similar to The Now-method on the event raise is not meant to be called directly, only use it to register to an event on a fake object that you want to be raised..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.NumberOfOutAndRefParametersDoesNotMatchCall">
-            <summary>
-              Looks up a localized string similar to The number of values for out and ref parameters specified does not match the number of out and ref parameters in the call..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.OrderedAssertionsAlreadyOpen">
-            <summary>
-              Looks up a localized string similar to A scope for ordered assertions is already opened, close that scope before opening another one..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.SpecifiedCallIsNotToFakedObject">
-            <summary>
-              Looks up a localized string similar to The specified call is not made on a fake object..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.TypeCanNotBeProxied">
-            <summary>
-              Looks up a localized string similar to The current fake proxy generator can not create proxies of the type {0}..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.UnableToCreateDummyPattern">
-            <summary>
-              Looks up a localized string similar to FakeItEasy was unable to create dummy of type &quot;{0}&quot;, register it in the current IFakeObjectContainer to enable this..
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.WasCalledWrongNumberOfTimes">
-            <summary>
-              Looks up a localized string similar to Expected to find call {0} the number of times specified by the predicate &apos;{1}&apos; but found it {2} times among the calls:.
-            </summary>
-        </member>
-        <member name="P:FakeItEasy.ExceptionMessages.WrongNumberOfArgumentNamesMessage">
-            <summary>
-              Looks up a localized string similar to The number of argument names does not match the number of arguments..
-            </summary>
         </member>
         <member name="T:FakeItEasy.OutputWriter">
             <summary>
@@ -3099,24 +3081,6 @@
             <param name="argument">The argument.</param>
             <param name="argumentName">Name of the argument.</param>
             <exception cref="T:System.ArgumentNullException">The specified argument was null.</exception>
-        </member>
-        <member name="M:FakeItEasy.Guard.IsInRange``1(``0,``0,``0,System.String)">
-            <summary>
-            Throws an exception if the specified argument is not in the given range.
-            </summary>
-            <typeparam name="T">The type of the argument.</typeparam>
-            <param name="argument">The argument.</param>
-            <param name="lowerBound">The lower bound.</param>
-            <param name="upperBound">The upper bound.</param>
-            <param name="argumentName">Name of the argument.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException">The specified argument was not in the given range.</exception>
-        </member>
-        <member name="M:FakeItEasy.Guard.AgainstNullOrEmpty(System.String,System.String)">
-            <summary>
-            Throws an ArgumentNullException if the specified string is null or empty.
-            </summary>
-            <param name="value">The value to guard.</param>
-            <param name="argumentName">Name of the argument.</param>
         </member>
         <member name="T:FakeItEasy.Fake">
             <summary>

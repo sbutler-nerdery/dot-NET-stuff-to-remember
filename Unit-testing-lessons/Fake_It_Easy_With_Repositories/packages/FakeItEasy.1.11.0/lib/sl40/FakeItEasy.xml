@@ -1506,14 +1506,14 @@
             Called when the interception begins but before any call rules
             has been applied.
             </summary>
-            <param name="call">The intercepted call.</param>
+            <param name="interceptedCall">The intercepted call.</param>
         </member>
         <member name="M:FakeItEasy.Core.IInterceptionListener.OnAfterCallIntercepted(FakeItEasy.Core.ICompletedFakeObjectCall,FakeItEasy.Core.IFakeObjectCallRule)">
             <summary>
             Called when the interception has been completed and rules has been
             applied.
             </summary>
-            <param name="call">The intercepted call.</param>
+            <param name="interceptedCall">The intercepted call.</param>
             <param name="ruleThatWasApplied">The rule that was applied to the call.</param>
         </member>
         <member name="T:FakeItEasy.Core.MethodInfoManager">
@@ -1550,22 +1550,6 @@
             </summary>
             <param name="typeOfFake">The type the fake object represents.</param>
             <param name="fakeObject">The fake object to configure.</param>
-        </member>
-        <member name="M:FakeItEasy.Core.OrderedFakeAsserter.#ctor(System.Collections.Generic.IEnumerable{FakeItEasy.Core.IFakeObjectCall},FakeItEasy.Core.CallWriter)">
-            <summary>
-            Initializes a new instance of the <see cref="T:FakeItEasy.Core.OrderedFakeAsserter"/> class.
-            </summary>
-            <param name="calls">The calls.</param>
-            <param name="callWriter">The call writer.</param>
-        </member>
-        <member name="M:FakeItEasy.Core.OrderedFakeAsserter.AssertWasCalled(System.Func{FakeItEasy.Core.IFakeObjectCall,System.Boolean},System.String,System.Func{System.Int32,System.Boolean},System.String)">
-            <summary>
-            Asserts the was called.
-            </summary>
-            <param name="callPredicate">The call predicate.</param>
-            <param name="callDescription">The call description.</param>
-            <param name="repeatPredicate">The repeat predicate.</param>
-            <param name="repeatDescription">The repeat description.</param>
         </member>
         <member name="T:FakeItEasy.Core.WrappedObjectRule">
             <summary>
@@ -2133,10 +2117,14 @@
         </member>
         <member name="P:FakeItEasy.ExceptionMessages.FailedToGenerateFakeWithArgumentsForConstructorPattern">
              <summary>
-               Looks up a localized string similar to The current proxy generator failed to create a proxy with the specified arguments for the constructor:
+               Looks up a localized string similar to 
+            
+              The current proxy generator failed to create a proxy with the specified arguments for the constructor:
             
               Reason for failure:
-                - {0}.
+                - {0}
+              
+            .
              </summary>
         </member>
         <member name="P:FakeItEasy.ExceptionMessages.FailedToGenerateProxyPattern">
@@ -2932,24 +2920,6 @@
             <param name="argumentName">Name of the argument.</param>
             <exception cref="T:System.ArgumentNullException">The specified argument was null.</exception>
         </member>
-        <member name="M:FakeItEasy.Guard.IsInRange``1(``0,``0,``0,System.String)">
-            <summary>
-            Throws an exception if the specified argument is not in the given range.
-            </summary>
-            <typeparam name="T">The type of the argument.</typeparam>
-            <param name="argument">The argument.</param>
-            <param name="lowerBound">The lower bound.</param>
-            <param name="upperBound">The upper bound.</param>
-            <param name="argumentName">Name of the argument.</param>
-            <exception cref="T:System.ArgumentOutOfRangeException">The specified argument was not in the given range.</exception>
-        </member>
-        <member name="M:FakeItEasy.Guard.AgainstNullOrEmpty(System.String,System.String)">
-            <summary>
-            Throws an ArgumentNullException if the specified string is null or empty.
-            </summary>
-            <param name="value">The value to guard.</param>
-            <param name="argumentName">Name of the argument.</param>
-        </member>
         <member name="M:FakeItEasy.Helpers.GetValueProducedByExpression(System.Linq.Expressions.Expression)">
             <summary>
             Gets the value produced by the specified expression when compiled and invoked.
@@ -3040,12 +3010,6 @@
             <summary>
             Specifies twice as the repeat.
             </summary>
-        </member>
-        <member name="M:FakeItEasy.Logger.Debug(System.Func{System.String})">
-            <summary>
-            Writes the specified message to the logger.
-            </summary>
-            <param name="message">The message to write.</param>
         </member>
         <member name="T:FakeItEasy.NextCall">
             <summary>

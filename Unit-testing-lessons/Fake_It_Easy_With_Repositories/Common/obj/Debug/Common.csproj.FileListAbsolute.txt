@@ -10,3 +10,15 @@ C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\Data.pdb
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\Ninject.pdb
 C:\Development\Personal\Web\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\Ninject.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\obj\Debug\Common.csprojResolveAssemblyReference.cache
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\Common.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\Common.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\Data.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\EntityFramework.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\Ninject.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\Data.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\EntityFramework.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\Ninject.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\bin\Debug\Ninject.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\obj\Debug\Common.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Fake_It_Easy_With_Repositories\Common\obj\Debug\Common.pdb

@@ -36,7 +36,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="FakeItEasy">
-      <HintPath>..\packages\FakeItEasy.1.10.0\lib\net40\FakeItEasy.dll</HintPath>
+      <HintPath>..\packages\FakeItEasy.1.11.0\lib\net40\FakeItEasy.dll</HintPath>
     </Reference>
     <Reference Include="System" />
   </ItemGroup>
