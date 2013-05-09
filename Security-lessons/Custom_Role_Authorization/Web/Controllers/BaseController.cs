@@ -12,7 +12,10 @@ using WebMatrix.WebData;
 
 namespace Web.Controllers
 {
-    //Setting the Authorize attribute on the base controller will ensure that the user is logged in.
+    
+    /// <summary>
+    /// All of the other controllers on the site inherit from this controller. 
+    /// </summary>
     [Authorize]
     public class BaseController : Controller
     {
@@ -22,8 +25,14 @@ namespace Web.Controllers
         {
             base.OnAuthorization(filterContext);
 
-            //Note: only controllers that inherit from BaseController will work with this security helper.
-            Permissions = SecurityHelper.GetAllControllerPermissions().ToList();
+            //Make sure that we are caching this lookup as it could be resource intensive...
+            if (!CacheHelper.IsSet(Constants.CACHED_PERMISSIONS))
+            {
+                //Note: only controllers that inherit from BaseController will work with this security helper.
+                CacheHelper.Set(Constants.CACHED_PERMISSIONS, SecurityHelper.GetAllControllerPermissions().ToList(), 120);
+            }
+
+            Permissions = CacheHelper.Get(Constants.CACHED_PERMISSIONS) as List<CustomPermissionViewModel>;
 
             //Make sure that WebSecurity is initialized
             if (!WebSecurity.Initialized)

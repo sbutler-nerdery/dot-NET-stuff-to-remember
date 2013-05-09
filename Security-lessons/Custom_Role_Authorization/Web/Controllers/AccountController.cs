@@ -87,6 +87,7 @@ namespace Web.Controllers
                     Roles.AddUserToRole(model.UserName, Constants.ROLES_VIEWER);
 
                     WebSecurity.Login(model.UserName, model.Password);
+
                     return RedirectToAction("Index", "Home");
                 }
                 catch (MembershipCreateUserException e)
@@ -386,7 +387,7 @@ namespace Web.Controllers
         public ActionResult ManageCustomPermissions()
         {
             var model = new ManageCustomPermissionsViewModel();
-            model.Permissions = SecurityHelper.GetAllControllerPermissions().ToList();
+            model.Permissions = CacheHelper.Get(Constants.CACHED_PERMISSIONS) as List<CustomPermissionViewModel>;
             return View(model);
         }
 
@@ -436,7 +437,11 @@ namespace Web.Controllers
         [HttpPost]
         public ActionResult EditCustomPermissions(EditCustomPermissionViewModel model)
         {
+            //Save the changes to the database...
             SecurityHelper.UpdateSecurityPermission(model.Permission);
+            //Cache the updates in memory...
+            CacheHelper.Invalidate(Constants.CACHED_PERMISSIONS);
+            CacheHelper.Set(Constants.CACHED_PERMISSIONS, SecurityHelper.GetAllControllerPermissions().ToList(), 120);
             return RedirectToAction("ManageCustomPermissions");
         }
 

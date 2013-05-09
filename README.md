@@ -18,3 +18,4 @@ This is a collection of projects that will help refresh my memory for all things
   - (Project Complete) How to unit test EF backed business objects with FakeItEasy.
   - How to unit test an MVC Controller
   - How to use a sitemap
+  - How to put together a mobile project

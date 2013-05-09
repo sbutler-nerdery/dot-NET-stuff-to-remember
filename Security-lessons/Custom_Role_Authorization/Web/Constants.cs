@@ -39,5 +39,8 @@
         /// The anonymous user name
         /// </summary>
         public const string ANONYMOUS_USER = "anonymous";
+
+        /* Caching */
+        public const string CACHED_PERMISSIONS = "cachedPermissions";
     }
 }
