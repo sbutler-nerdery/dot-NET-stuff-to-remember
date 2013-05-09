@@ -84,16 +84,15 @@ ko.validation.configure({ decorateElement: true });
 
         ko.mapping.fromJS(blogsJson, mappingOptions, self.blogs);
 
-        //Setup validation
-        self.errorMessages = ko.validation.group(self.blogs(), { deep: true });
-
         //Methods
         self.applyBindings = function () {
             ko.applyBindings(self);
         };
 
         self.save = function () {
-            if (self.errorMessages().length == 0) {
+            var validResult = ko.validation.group(self.blogs(), { deep: true });
+
+            if (validResult().length == 0) {
                 var blogs = ko.mapping.toJS(self.blogs);
                 KnockoutBasics.Server.postJson(blogs, self.reloadData);
             }
