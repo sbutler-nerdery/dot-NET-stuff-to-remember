@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Miniprofiler.CodeFirst.Models.Person>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>People and their Gadgets</h2>
+
+<ul>
+@foreach (var person in Model)
+{
+    <li>@person.Name</li>    
+    <ul>
+        @foreach (var gadget in person.Gadgets)
+        {
+            <li>@gadget.Name</li>
+        }
+    </ul>
+}
+</ul>
