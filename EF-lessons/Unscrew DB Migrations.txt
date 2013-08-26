@@ -1,0 +1,23 @@
+Resolving Migration Conflicts:
+- For the sake of example, assume migrations are named Migration1, Migration2 etc.  
+- For this example we'll pretend that Migration4 is the last good common migration
+
+- Start with updating to the most recent common migration (e.g. the migration before the conflicts happened)
+  update-database -TargetMigration:"201302152129433_Migration4"
+
+- Migration5 is the next one we want to fix.  Comment out all migrations after Migration5 (e.g. Migration6, Migration7, etc)
+- Just comment out the .cs file, leave the .Designer.cs file and the .resx file
+
+- Rescaffold Migration5 by adding a migration with the same name(without the date/time stamp portion)
+  add-migration Migration5
+
+Important: you must have the later migrations commented out otherwise it will create a new migration instead of rescaffolding
+
+- Uncomment Migration6, then Rescaffold that.
+- add-migration Migration6
+
+- Repeat for any remaining migrations.
+
+Now you should be able to update-database as normal.
+
+Note: Also ran into a weird case where I had to delete and recreate the last migration, not sure if that was a fluke due to having added code to it or not.
