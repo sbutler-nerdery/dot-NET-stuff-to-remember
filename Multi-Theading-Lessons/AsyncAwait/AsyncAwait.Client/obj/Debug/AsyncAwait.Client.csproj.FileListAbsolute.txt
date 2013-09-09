@@ -1,0 +1,6 @@
+C:\Development\Personal\dot-NET-stuff-to-remember\Multi-Theading-Lessons\AsyncAwait\AsyncAwait.Client\bin\Debug\AsyncAwait.Client.exe.config
+C:\Development\Personal\dot-NET-stuff-to-remember\Multi-Theading-Lessons\AsyncAwait\AsyncAwait.Client\bin\Debug\AsyncAwait.Client.exe
+C:\Development\Personal\dot-NET-stuff-to-remember\Multi-Theading-Lessons\AsyncAwait\AsyncAwait.Client\bin\Debug\AsyncAwait.Client.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Multi-Theading-Lessons\AsyncAwait\AsyncAwait.Client\obj\Debug\AsyncAwait.Client.csprojResolveAssemblyReference.cache
+C:\Development\Personal\dot-NET-stuff-to-remember\Multi-Theading-Lessons\AsyncAwait\AsyncAwait.Client\obj\Debug\AsyncAwait.Client.exe
+C:\Development\Personal\dot-NET-stuff-to-remember\Multi-Theading-Lessons\AsyncAwait\AsyncAwait.Client\obj\Debug\AsyncAwait.Client.pdb

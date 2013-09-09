@@ -31,10 +31,14 @@ namespace Glimpse.API.Web.Controllers
         }
 
         // POST api/person
-        public void Post(Person model)
+        public HttpResponseMessage Post(Person model)
         {
             _PersonRepository.Insert(model);
             _PersonRepository.SubmitChanges();
+
+            var response = Request.CreateResponse(HttpStatusCode.Created, viewModel);
+            response.Headers.Location = new Uri(Request.RequestUri, Url.Route(null, new { id = viewModel.ScheduleId }));
+            return response;
         }
 
         // PUT api/person/5
