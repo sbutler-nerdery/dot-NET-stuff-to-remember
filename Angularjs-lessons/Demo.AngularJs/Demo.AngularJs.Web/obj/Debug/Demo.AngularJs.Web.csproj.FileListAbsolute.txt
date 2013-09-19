@@ -1,0 +1,5 @@
+C:\Development\Personal\Demo.AngularJs\Demo.AngularJs.Web\bin\Demo.AngularJs.Web.dll
+C:\Development\Personal\Demo.AngularJs\Demo.AngularJs.Web\bin\Demo.AngularJs.Web.pdb
+C:\Development\Personal\Demo.AngularJs\Demo.AngularJs.Web\obj\Debug\Demo.AngularJs.Web.csprojResolveAssemblyReference.cache
+C:\Development\Personal\Demo.AngularJs\Demo.AngularJs.Web\obj\Debug\Demo.AngularJs.Web.dll
+C:\Development\Personal\Demo.AngularJs\Demo.AngularJs.Web\obj\Debug\Demo.AngularJs.Web.pdb

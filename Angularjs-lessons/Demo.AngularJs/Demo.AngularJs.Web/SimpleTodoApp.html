@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html ng-app>
+<head>
+    <title>Simple TODO List</title>
+    <link rel="stylesheet" href="Content/bootstrap/bootstrap.min.css"/>
+    <style type="text/css">
+        .done-true{ color: grey;text-decoration: line-through;}
+        .isHidden { display: none;}
+        body{ padding: 14px; }
+    </style>
+</head>
+    <body>
+        <div ng-controller="TodoCtrl">
+            <h2>Total todos: {{getTotalTodos()}}</h2>
+            <ul class="unstyled">
+                <li ng-repeat="todo in todos">
+                    <input type="checkbox" ng-model="todo.done"/>
+                    <span class="done-{{todo.done}}">{{todo.text}}</span>
+                </li>
+            </ul>
+            <form class="form-horizontal">
+                <input type="text" ng-model="formTodoText" ng-model-instant />
+                <button class="btn btn-primary" ng-click="addTodo()">Add</button>
+            </form>
+            <button ng-class="{true:'btn-large btn-danger', false: 'isHidden'}[willBeDeleted() > 0]" ng-click="clearCompleted()">Delete {{willBeDeleted()}}</button>
+        </div>
+        <script src="Scripts/angular.js"></script>
+        <script src="Scripts/underscore.js"></script>
+        <script type="text/javascript">
+            function TodoCtrl($scope) {
+                $scope.todos = [
+                    {text:'Learn something new', done:false}
+                ];
+
+                $scope.getTotalTodos = function() {
+                    return $scope.todos.length;
+                };
+
+                $scope.addTodo = function() {
+                    $scope.todos.push({ text: $scope.formTodoText, done: false });
+                    $scope.formTodoText = '';
+                };
+
+                $scope.clearCompleted = function() {
+                    $scope.todos = _.filter($scope.todos, function (todo) {
+                        return !todo.done;
+                    });
+                };
+                
+                $scope.willBeDeleted = function() {
+                    var checked = _.filter($scope.todos, function (todo) {
+                        return todo.done;
+                    });
+
+                    return checked.length;
+                }
+            }
+        </script>
+    </body>
+</html>

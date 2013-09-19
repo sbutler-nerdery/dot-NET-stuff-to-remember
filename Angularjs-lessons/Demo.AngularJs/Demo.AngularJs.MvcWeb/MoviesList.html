@@ -1,0 +1,6 @@
+﻿        <ul class="list-unstyled">
+            <li ng-repeat="movie in movies">
+                <img src="{{movie.posters.thumbnail}}" alt="thmbnail"/>
+                <a href="/movie/{{movie.id}}">{{movie.title}}</a>
+            </li>
+        </ul>

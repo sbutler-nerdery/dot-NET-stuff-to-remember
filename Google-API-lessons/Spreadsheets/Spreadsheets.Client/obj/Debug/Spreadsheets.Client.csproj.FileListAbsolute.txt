@@ -1,0 +1,12 @@
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\bin\Debug\Spreadsheets.Client.exe.config
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\bin\Debug\Spreadsheets.Client.exe
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\bin\Debug\Spreadsheets.Client.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\bin\Debug\Google.GData.Client.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\bin\Debug\Google.GData.Extensions.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\bin\Debug\Google.GData.Spreadsheets.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\bin\Debug\Newtonsoft.Json.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\bin\Debug\Newtonsoft.Json.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\bin\Debug\Newtonsoft.Json.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\obj\Debug\Spreadsheets.Client.csprojResolveAssemblyReference.cache
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\obj\Debug\Spreadsheets.Client.exe
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Spreadsheets\Spreadsheets.Client\obj\Debug\Spreadsheets.Client.pdb

@@ -1,0 +1,10 @@
+﻿'use strict';
+
+// Declare app level module which depends on filters, and services
+angular.module('demo', ['demo.services', 'demo.controllers', 'ngRoute'])
+    .config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
+        $routeProvider
+            .when('/', { controller: 'mainController', templateUrl: 'MoviesList.html' })
+            .when('/movie/:movieId', { controller: 'detailController', templateUrl: 'MovieDetails.html' })
+            .otherwise({ redirectTo: '/' });
+    }]);

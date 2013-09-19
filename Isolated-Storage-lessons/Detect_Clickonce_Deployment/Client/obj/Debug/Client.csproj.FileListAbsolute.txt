@@ -1,0 +1,5 @@
+C:\Development\Personal\dot-NET-stuff-to-remember\Isolated-Storage-lessons\Detect_Clickonce_Deployment\Client\bin\Debug\Client.exe.config
+C:\Development\Personal\dot-NET-stuff-to-remember\Isolated-Storage-lessons\Detect_Clickonce_Deployment\Client\bin\Debug\Client.exe
+C:\Development\Personal\dot-NET-stuff-to-remember\Isolated-Storage-lessons\Detect_Clickonce_Deployment\Client\bin\Debug\Client.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Isolated-Storage-lessons\Detect_Clickonce_Deployment\Client\obj\Debug\Client.exe
+C:\Development\Personal\dot-NET-stuff-to-remember\Isolated-Storage-lessons\Detect_Clickonce_Deployment\Client\obj\Debug\Client.pdb

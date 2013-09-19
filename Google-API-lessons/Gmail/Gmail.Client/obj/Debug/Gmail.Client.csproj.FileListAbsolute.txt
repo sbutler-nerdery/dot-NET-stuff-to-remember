@@ -1,0 +1,5 @@
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Gmail\Gmail.Client\bin\Debug\Gmail.Client.exe.config
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Gmail\Gmail.Client\bin\Debug\Gmail.Client.exe
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Gmail\Gmail.Client\bin\Debug\Gmail.Client.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Gmail\Gmail.Client\obj\Debug\Gmail.Client.exe
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Gmail\Gmail.Client\obj\Debug\Gmail.Client.pdb

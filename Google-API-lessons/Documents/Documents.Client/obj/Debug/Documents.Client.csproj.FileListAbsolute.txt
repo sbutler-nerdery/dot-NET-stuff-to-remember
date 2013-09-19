@@ -1,0 +1,13 @@
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\bin\Debug\Documents.Client.exe.config
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\bin\Debug\Documents.Client.exe
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\bin\Debug\Documents.Client.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\bin\Debug\Google.GData.AccessControl.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\bin\Debug\Google.GData.Client.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\bin\Debug\Google.GData.Documents.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\bin\Debug\Google.GData.Extensions.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\bin\Debug\Newtonsoft.Json.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\bin\Debug\Newtonsoft.Json.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\bin\Debug\Newtonsoft.Json.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\obj\Debug\Documents.Client.csprojResolveAssemblyReference.cache
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\obj\Debug\Documents.Client.exe
+C:\Development\Personal\dot-NET-stuff-to-remember\Google-API-lessons\Documents\Documents.Client\obj\Debug\Documents.Client.pdb
