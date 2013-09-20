@@ -19,6 +19,7 @@ namespace Web.ViewModels
         [Required]
         [EmailAddress]
         public string Email { get; set; }
+        public Person Friend { get; set; }
         public List<School> SchoolsIWentTo { get; set; }
         public School Template { get; set; }
     }

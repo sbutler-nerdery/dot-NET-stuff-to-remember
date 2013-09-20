@@ -1,0 +1,13 @@
+﻿@model Web.ViewModels.Person
+
+<h2>Friend Info</h2>
+<ol>
+    <li>
+        @Html.LabelFor(model => model.FirstName)
+        @Html.TextBoxFor(model => model.FirstName)            
+    </li>
+    <li>
+        @Html.LabelFor(model => model.Email)
+        @Html.TextBoxFor(model => model.Email)
+    </li>
+</ol>

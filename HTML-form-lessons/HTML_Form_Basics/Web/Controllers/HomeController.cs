@@ -48,6 +48,7 @@ namespace Web.Controllers
                 FirstName = "Joe",
                 Email = "joe@hotmail.com",
                 Template = new School{ IsTemplate = true },
+                Friend = new Person{FirstName = "Bob", Email = "bob@gmail.com"},
                 SchoolsIWentTo = new List<School> { 
                     new School {Name = "Some college", PhoneNumber = "123.123.1234", IsTemplate = false}
                 }

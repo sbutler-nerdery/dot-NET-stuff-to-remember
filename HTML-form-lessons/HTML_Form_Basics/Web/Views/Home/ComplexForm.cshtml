@@ -115,7 +115,7 @@
         }
     </script>
 }
-<h2>Completx Form</h2>
+<h2>Complex Form</h2>
 @using (Html.BeginForm("ComplexForm", "Home", FormMethod.Post))
 {
     <fieldset>
@@ -130,6 +130,13 @@
             <li>
                 @Html.LabelFor(model => model.Email)
                 @Html.TextBoxFor(model => model.Email)
+            </li>
+            <li>
+                @Html.LabelFor(model => model.Email)
+                @Html.TextBoxFor(model => model.Email)
+            </li>
+            <li>
+                @Html.EditorFor(model => model.Friend)
             </li>
             <li><button type="submit">Submit</button></li>
         </ol>
