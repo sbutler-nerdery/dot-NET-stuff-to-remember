@@ -6,7 +6,7 @@ using System.Web.Http.Filters;
 
 namespace Demo.WebApi.Security.Web.Filters
 {
-    public class EnforceHttpsAttribute : ActionFilterAttribute
+    public class EnforceHttpsForApiAttribute : ActionFilterAttribute
     {
         public override void OnActionExecuting(HttpActionContext actionContext)
         {

@@ -23,11 +23,6 @@ namespace Demo.WebApi.Security.Web
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
-
-            //Do this to add attribute filters globally!
-            var config = GlobalConfiguration.Configuration;
-            config.Filters.Add(new TokenValidationAttribute());
-            config.Filters.Add(new EnforceHttpsAttribute());
         }
     }
 }

@@ -163,6 +163,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Filters\EnforceHttpsAttribute.cs" />
+    <Compile Include="Filters\EnforceHttpsForWebAttribute.cs" />
     <Compile Include="Filters\IPHostValidationAttribute.cs" />
     <Compile Include="Filters\TokenValidationAttribute.cs" />
     <Compile Include="Global.asax.cs">
