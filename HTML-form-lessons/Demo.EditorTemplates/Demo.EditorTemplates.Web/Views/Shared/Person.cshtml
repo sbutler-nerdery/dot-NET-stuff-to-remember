@@ -1,0 +1,26 @@
+﻿@model Demo.EditorTemplates.Web.Models.Person
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Person</legend>
+
+        <div class="display-label">
+            @Html.LabelFor(model => model.FirstName)
+        </div>
+        <div class="display-field">
+            @Html.TextBoxFor(model => model.FirstName)
+        </div>
+
+        <div class="display-label">
+            @Html.LabelFor(model => model.LastName)
+        </div>
+        <div class="display-field">
+            @Html.TextBoxFor(model => model.LastName)
+        </div>
+        
+        @Html.EditorFor(model => model.MyAddress)
+    </fieldset>
+    <button type="submit">Submit</button>
+}
+
