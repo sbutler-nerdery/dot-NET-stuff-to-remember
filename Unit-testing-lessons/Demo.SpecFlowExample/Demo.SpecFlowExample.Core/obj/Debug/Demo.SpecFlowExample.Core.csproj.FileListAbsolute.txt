@@ -1,0 +1,9 @@
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.SpecFlowExample\Demo.SpecFlowExample.Core\bin\Debug\Demo.SpecFlowExample.Core.dll.config
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.SpecFlowExample\Demo.SpecFlowExample.Core\bin\Debug\Demo.SpecFlowExample.Core.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.SpecFlowExample\Demo.SpecFlowExample.Core\bin\Debug\Demo.SpecFlowExample.Core.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.SpecFlowExample\Demo.SpecFlowExample.Core\bin\Debug\nunit.framework.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.SpecFlowExample\Demo.SpecFlowExample.Core\bin\Debug\TechTalk.SpecFlow.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.SpecFlowExample\Demo.SpecFlowExample.Core\bin\Debug\nunit.framework.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.SpecFlowExample\Demo.SpecFlowExample.Core\obj\Debug\Demo.SpecFlowExample.Core.csprojResolveAssemblyReference.cache
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.SpecFlowExample\Demo.SpecFlowExample.Core\obj\Debug\Demo.SpecFlowExample.Core.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.SpecFlowExample\Demo.SpecFlowExample.Core\obj\Debug\Demo.SpecFlowExample.Core.pdb

@@ -24,3 +24,6 @@ EF-lessons/Complex_Relationships/TestResults/sbutler_SBUTLER-WIN7 2013-05-06 09_
 *.MDF
 *.ldf
 Security-lessons/Custom_Role_Authorization/Web/obj/Release/
+Unit-testing-lessons/Demo.SpecFlowExample/Demo.SpecFlowExample.Core/obj/
+Unit-testing-lessons/Demo.SpecFlowExample/Demo.SpecFlowExample.Core.Tests/obj/
+Unit-testing-lessons/Demo.SpecFlowExample/packages/
