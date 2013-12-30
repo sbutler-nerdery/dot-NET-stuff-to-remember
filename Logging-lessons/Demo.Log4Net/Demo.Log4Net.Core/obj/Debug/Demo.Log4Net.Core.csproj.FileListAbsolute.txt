@@ -1,0 +1,6 @@
+C:\Development\Personal\dot-NET-stuff-to-remember\Logging-lessons\Demo.Log4Net\Demo.Log4Net.Core\bin\Debug\Demo.Log4Net.Core.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Logging-lessons\Demo.Log4Net\Demo.Log4Net.Core\bin\Debug\Demo.Log4Net.Core.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Logging-lessons\Demo.Log4Net\Demo.Log4Net.Core\bin\Debug\log4net.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Logging-lessons\Demo.Log4Net\Demo.Log4Net.Core\bin\Debug\log4net.xml
+C:\Development\Personal\dot-NET-stuff-to-remember\Logging-lessons\Demo.Log4Net\Demo.Log4Net.Core\obj\Debug\Demo.Log4Net.Core.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Logging-lessons\Demo.Log4Net\Demo.Log4Net.Core\obj\Debug\Demo.Log4Net.Core.pdb
