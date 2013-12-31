@@ -1,0 +1,9 @@
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Tests\obj\Debug\Demo.FakeItEasyWithExpressions.Tests.csprojResolveAssemblyReference.cache
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Tests\bin\Debug\Demo.FakeItEasyWithExpressions.Tests.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Tests\bin\Debug\Demo.FakeItEasyWithExpressions.Tests.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Tests\bin\Debug\Demo.FakeItEasyWithExpressions.Core.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Tests\bin\Debug\Demo.FakeItEasyWithExpressions.Core.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Tests\obj\Debug\Demo.FakeItEasyWithExpressions.Tests.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Tests\obj\Debug\Demo.FakeItEasyWithExpressions.Tests.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Tests\bin\Debug\FakeItEasy.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Tests\bin\Debug\FakeItEasy.xml

@@ -28,3 +28,6 @@ Unit-testing-lessons/Demo.SpecFlowExample/Demo.SpecFlowExample.Core/obj/
 Unit-testing-lessons/Demo.SpecFlowExample/Demo.SpecFlowExample.Core.Tests/obj/
 Unit-testing-lessons/Demo.SpecFlowExample/packages/
 Logging-lessons/Demo.Log4Net/packages/
+Unit-testing-lessons/Demo.FakeItEasyWithExpressions/packages/
+Unit-testing-lessons/Demo.FakeItEasyWithExpressions/Demo.FakeItEasyWithExpressions.Tests/obj/
+Unit-testing-lessons/Demo.FakeItEasyWithExpressions/Demo.FakeItEasyWithExpressions.Core/obj/

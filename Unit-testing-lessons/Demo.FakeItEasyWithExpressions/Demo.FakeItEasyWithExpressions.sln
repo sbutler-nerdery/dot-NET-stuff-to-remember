@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.FakeItEasyWithExpressions.Core", "Demo.FakeItEasyWithExpressions.Core\Demo.FakeItEasyWithExpressions.Core.csproj", "{1331B158-D6A3-4F51-8FF2-A4561EB94FCC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo.FakeItEasyWithExpressions.Tests", "Demo.FakeItEasyWithExpressions.Tests\Demo.FakeItEasyWithExpressions.Tests.csproj", "{22BC11C9-6633-4902-ADFF-D5EF129A827C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1331B158-D6A3-4F51-8FF2-A4561EB94FCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1331B158-D6A3-4F51-8FF2-A4561EB94FCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1331B158-D6A3-4F51-8FF2-A4561EB94FCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1331B158-D6A3-4F51-8FF2-A4561EB94FCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22BC11C9-6633-4902-ADFF-D5EF129A827C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22BC11C9-6633-4902-ADFF-D5EF129A827C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22BC11C9-6633-4902-ADFF-D5EF129A827C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22BC11C9-6633-4902-ADFF-D5EF129A827C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,5 @@
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Core\bin\Debug\Demo.FakeItEasyWithExpressions.Core.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Core\bin\Debug\Demo.FakeItEasyWithExpressions.Core.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Core\obj\Debug\Demo.FakeItEasyWithExpressions.Core.csprojResolveAssemblyReference.cache
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Core\obj\Debug\Demo.FakeItEasyWithExpressions.Core.dll
+C:\Development\Personal\dot-NET-stuff-to-remember\Unit-testing-lessons\Demo.FakeItEasyWithExpressions\Demo.FakeItEasyWithExpressions.Core\obj\Debug\Demo.FakeItEasyWithExpressions.Core.pdb
