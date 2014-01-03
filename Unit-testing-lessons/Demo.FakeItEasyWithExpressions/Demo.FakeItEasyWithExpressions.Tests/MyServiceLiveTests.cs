@@ -22,21 +22,28 @@ namespace Demo.FakeItEasyWithExpressions.Tests
         [TestMethod]
         public void Can_find_person_by_name()
         {
-            var results = _service.Find(x => x.Name.Contains("Charles"));
+            var results = _service.FindByExpression(x => x.Name.Contains("Charles"));
             Assert.AreEqual(results.Count(), 1);
         }
 
         [TestMethod]
         public void Can_find_person_by_DOB()
         {
-            var results = _service.Find(x => x.DOB == DateTime.Parse("9/3/1985"));
+            var results = _service.FindByExpression(x => x.DOB == DateTime.Parse("9/3/1985"));
             Assert.AreEqual(results.Count(), 1);
         }
 
         [TestMethod]
         public void Can_find_person_by_Id()
         {
-            var results = _service.Find(x => x.PersonId == 1);
+            var results = _service.FindByFunc(x => x.PersonId == 1);
+            Assert.AreEqual(results.Count(), 1);
+        }
+
+        [TestMethod]
+        public void Can_find_person_by_two_properties()
+        {
+            var results = _service.FindByExpression(x => x.PersonId == 1 && x.Name == "Charles Bronson");
             Assert.AreEqual(results.Count(), 1);
         }
     }

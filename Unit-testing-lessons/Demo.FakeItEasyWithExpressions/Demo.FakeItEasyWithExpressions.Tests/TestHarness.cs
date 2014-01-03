@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Demo.FakeItEasyWithExpressions.Core;
@@ -16,9 +17,14 @@ namespace Demo.FakeItEasyWithExpressions.Tests
             _service = service;
         }
 
-        public IEnumerable<Person> FindAPerson(Func<Person, bool> where)
+        public IEnumerable<Person> Find(Func<Person, bool> where)
         {
-            return _service.Find(where);
+            return _service.FindByFunc(where);
+        }
+
+        public IQueryable<Person> FindInDataStore(Expression<Func<Person, bool>> where)
+        {
+            return _service.FindByExpression(where);
         }
     }
 }

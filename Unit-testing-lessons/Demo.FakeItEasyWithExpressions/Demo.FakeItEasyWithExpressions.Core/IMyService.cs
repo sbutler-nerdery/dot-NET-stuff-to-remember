@@ -9,6 +9,7 @@ namespace Demo.FakeItEasyWithExpressions.Core
 {
     public interface IMyService
     {
-        IEnumerable<Person> Find(Func<Person, bool> where);
+        IEnumerable<Person> FindByFunc(Func<Person, bool> where);
+        IQueryable<Person> FindByExpression(Expression<Func<Person, bool>> where);
     }
 }

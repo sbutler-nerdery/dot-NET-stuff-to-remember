@@ -20,7 +20,11 @@ namespace Demo.FakeItEasyWithExpressions.Core
                     new Person{ PersonId = 3, Name = "Bart Simpson", DOB = DateTime.Parse("3/17/1950")},
                 };    
         }
-        public IEnumerable<Person> Find(Func<Person, bool> where)
+        public IQueryable<Person> FindByExpression(Expression<Func<Person, bool>> where)
+        {
+            return _people.AsQueryable().Where(where);
+        }
+        public IEnumerable<Person> FindByFunc(Func<Person, bool> where)
         {
             return _people.Where(where);
         }
