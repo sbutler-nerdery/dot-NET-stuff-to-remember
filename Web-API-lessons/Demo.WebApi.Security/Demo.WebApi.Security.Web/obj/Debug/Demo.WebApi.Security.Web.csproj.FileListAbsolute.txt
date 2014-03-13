@@ -67,3 +67,4 @@ C:\Development\Personal\dot-NET-stuff-to-remember\Web-API-lessons\Demo.WebApi.Se
 C:\Development\Personal\dot-NET-stuff-to-remember\Web-API-lessons\Demo.WebApi.Security\Demo.WebApi.Security.Web\bin\zh-Hant\System.Spatial.resources.dll
 C:\Development\Personal\dot-NET-stuff-to-remember\Web-API-lessons\Demo.WebApi.Security\Demo.WebApi.Security.Web\obj\Debug\Demo.WebApi.Security.Web.dll
 C:\Development\Personal\dot-NET-stuff-to-remember\Web-API-lessons\Demo.WebApi.Security\Demo.WebApi.Security.Web\obj\Debug\Demo.WebApi.Security.Web.pdb
+C:\Development\Personal\dot-NET-stuff-to-remember\Web-API-lessons\Demo.WebApi.Security\Demo.WebApi.Security.Web\obj\Debug\Demo.WebApi.Security.Web.csprojResolveAssemblyReference.cache
