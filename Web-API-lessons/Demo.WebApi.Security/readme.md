@@ -1,9 +1,9 @@
 How to Use this Project
 ========================
 Here are the key elements of this project:
-1. the creation of an RSA key pair
-2. custom filter attributes used to enforece security
-3. registering the custom attributes to enforece security
+ 1. the creation of an RSA key pair
+ 2. custom filter attributes used to enforece security
+ 3. registering the custom attributes to enforece security
 
 RSA Encryption
 --------------
